@@ -6,10 +6,10 @@ import Logo from "../assets/ghishniz-logo.png"
 const Header = ()=>{
     return <header>
         <nav className="mobile-navigation" style={{display: "none"}}>
-            <div className="menu-main-container"><ul id="mobile-menu" className="menu"><li id="menu-item-703" className="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-703"><a href="https://healey.sculptureqode.com/">Home</a></li>
-                <li id="menu-item-713" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-713"><span className="sub-menu-toggle"><i className="fa fa-angle-up fa-angle-down"></i></span><a href="https://healey.sculptureqode.com/recipe-index/">Recipes</a></li>
-                <li id="menu-item-730" className="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-730"><a href="https://healey.sculptureqode.com/category/breakfasts/">Login</a></li>
-                <li id="menu-item-731" className="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-731"><a href="https://healey.sculptureqode.com/category/lunches/">Register</a></li>
+            <div className="menu-main-container"><ul id="mobile-menu" className="menu"><li id="menu-item-703" className="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-703"><a href="http://ghishniz.ir">Home</a></li>
+                <li id="menu-item-713" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-713"><span className="sub-menu-toggle"><i className="fa fa-angle-up fa-angle-down"></i></span><a href="http://ghishniz.ir">Recipes</a></li>
+                <li id="menu-item-730" className="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-730"><a href="http://ghishniz.ir">Login</a></li>
+                <li id="menu-item-731" className="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-731"><a href="http://ghishniz.ir">Register</a></li>
                 </ul>
             </div>	{/* Mobile navigation */}
         
@@ -25,10 +25,10 @@ const Header = ()=>{
                         <div className="menu-main-container">
                             <ul id="primary-menu" className="menu">
                                 <li className="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-703">
-                                    <a href="https://healey.sculptureqode.com/">Home</a>
+                                    <a href="http://ghishniz.ir">Home</a>
                                 </li>
                                 <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-713">
-                                <a href="https://healey.sculptureqode.com/recipe-index/">Recipes</a>
+                                <a href="http://ghishniz.ir">Recipes</a>
                                     {/* <ul className="sub-menu">
                                         <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-715">
                                             <a href="https://healey.sculptureqode.com/recipe-index-centered/">Traditional Recipes</a>
@@ -42,10 +42,10 @@ const Header = ()=>{
                                     </ul> */}
                                 </li>
                                 <li className="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-730">
-                                    <a href="https://healey.sculptureqode.com/category/breakfasts/">Login</a>
+                                    <a href="http://ghishniz.ir">Login</a>
                                 </li>
                                 <li className="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-731">
-                                   <a href="https://healey.sculptureqode.com/category/lunches/">Register</a>
+                                   <a href="http://ghishniz.ir">Register</a>
                                 </li>
                             </ul>
                         </div>													
