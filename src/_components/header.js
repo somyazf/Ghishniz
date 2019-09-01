@@ -1,9 +1,30 @@
 import React from 'react';
 import '../App.css';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { search } from '@fortawesome/free-solid-svg-icons'
+import { makeStyles } from '@material-ui/core/styles';
+import Icon from '@material-ui/core/Icon';
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import FormControl from '@material-ui/core/FormControl';
+import TextField from '@material-ui/core/TextField';
+import Grid from '@material-ui/core/Grid';
+import SearchIcon from '@material-ui/icons/Search';
 import Logo from "../assets/ghishniz-logo.png"
+
+const useStyles = makeStyles(theme => ({
+    root: {
+      color: theme.palette.text.primary,
+    },
+    margin: {
+        margin: theme.spacing(1),
+    },
+    inputBorderColor:{
+        borderBottomColor:'#d8412f',
+    }
+}));
+
 const Header = ()=>{
+    const classes = useStyles();
     return <header>
         <nav className="mobile-navigation" style={{display: "none"}}>
             <div className="menu-main-container"><ul id="mobile-menu" className="menu"><li id="menu-item-703" className="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-703"><a href="http://ghishniz.ir">Home</a></li>
@@ -50,14 +71,17 @@ const Header = ()=>{
                             </ul>
                         </div>													
 	                </nav>
-                    <i className="toggle-search fa fa-search" aria-hidden="true">Search</i>
-                    <form role="search"className="search-form">
-                        <label>    
-                           <span className="screen-reader-text">Search for:</span>
-                             <input type="search" className="search-field" placeholder="Type to search..." name="s" title="Search for:"/>    
-                        </label>    
-                        <button type="submit" className="search-submit"></button>
-                     </form>
+                    <FormControl className={classes.margin}>
+                        <InputLabel htmlFor="input-with-icon-adornment">Search</InputLabel>
+                        <Input
+                        id="input-with-icon-adornment"
+                        startAdornment={
+                            <InputAdornment position="start">
+                            <SearchIcon />
+                            </InputAdornment>
+                        }
+                        />
+                    </FormControl>
                 </div>
             </div>
     </header>
