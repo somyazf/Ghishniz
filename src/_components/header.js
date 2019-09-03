@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from "react";
+import ReactDOM from "react-dom";
+import useWindowScrollPosition from "@rehooks/window-scroll-position";
+
 import '../App.css';
 import { makeStyles } from '@material-ui/core/styles';
 import Icon from '@material-ui/core/Icon';
@@ -48,17 +51,6 @@ const Header = ()=>{
                                 </li>
                                 <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-713">
                                 <a href="http://ghishniz.ir">Recipes</a>
-                                    {/* <ul className="sub-menu">
-                                        <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-715">
-                                            <a href="https://healey.sculptureqode.com/recipe-index-centered/">Traditional Recipes</a>
-                                        </li>
-                                        <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-716">
-                                            <a href="https://healey.sculptureqode.com/recipe-index-full-width/">Your Recipes</a>
-                                        </li>
-                                        <li className="menu-item menu-item-type-post_type menu-item-object-post menu-item-725">
-                                            <a href="https://healey.sculptureqode.com/burger-with-deep-fried-onions/">Modern Recipes</a>
-                                        </li>
-                                    </ul> */}
                                 </li>
                                 <li className="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-730">
                                     <a href="http://ghishniz.ir">Login</a>
@@ -84,4 +76,28 @@ const Header = ()=>{
             </div>
     </header>
 }
+function TestNav() {
+    const [change, setChange] = useState(false);
+    const changePosition = 300;
+  
+    let position = useWindowScrollPosition();
+    // position == { x: 0, y: 0 }
+  
+    if (position.y > changePosition && !change) {
+      setChange(true);
+    }
+  
+    if (position.y <= changePosition && change) {
+      setChange(false);
+    }
+  
+    let style = {
+      backgroundColor: change ? "transparent" : "white",
+      transition: "600ms ease",
+    };
+  
+    return (
+      <Header/>
+    );
+  }
 export default Header;
