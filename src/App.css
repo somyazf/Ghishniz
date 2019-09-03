@@ -2,23 +2,24 @@
   box-sizing: border-box;
 }
 body{
-  
+  overflow-x: hidden;
+  font-family: sans-serif !important;
 }
 a{
   text-decoration: none;
-  color: #292929;
+  color: #fff;
+}
+.container-fluid {
+  padding-right: 0 !important; 
+  padding-left: 0 !important;
 }
 /*Menu*/
 header {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;    
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 222;
-  border-bottom: solid 1px #f1f3f3;
-  background: #fff;
+  width: 100%;
 }
 .mobile-navigation {
   background: #fff;
@@ -60,7 +61,8 @@ header .main-navigation li {
   padding-right: 15px;
 }
 header .main-navigation .current_page_item > a, header .main-navigation .current-menu-item > a, header .main-navigation .current_page_ancestor > a, header .main-navigation .current-menu-ancestor > a, header .main-navigation li:hover > a, header .main-navigation li.focus > a {
-  color: #dc0b0b;
+  color: #e75b1e;
+  font-size: 18px;
 }
 .site-header .main-navigation ul li.menu-item-has-children:before, .site-header .main-navigation ul li.page_item_has_children:before {
   -moz-osx-font-smoothing: grayscale;
@@ -140,10 +142,36 @@ header .search-form {
   top: 0;
 }
 .site-name{
-  height: 65px;
+  height: 70px;
 }
 .site-name img{
     height: 100%;
+}
+/*Banner*/
+.banner{
+  background: url('.\assets\banner.jpg')  fixed center/contain;
+  height: 48.99vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bannerText{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.bannerText h1{
+  letter-spacing: 2.7px;
+  font-size: 74px;
+  line-height: 100px;
+  color: #fff;
+  padding-bottom: 0px;
+  padding-top: 100px;
+}
+.bannerText button{
+  background: #f04900;
+  color: white;
 }
 /*Footer*/
 footer{
