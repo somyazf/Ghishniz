@@ -5,7 +5,8 @@ import MostPointSec from './mostPoints/mostPoints';
 import MostVisitedSec from './mostVisited/mostVisited';
 import Suggestion from './suggestions/suggestions';
 import Title from './title/title';
-import Banner from '../banner'
+import Banner from '../banner';
+import Search from '../recipePage/search'
 export default function Home() {
     return <>
         <Header/>
