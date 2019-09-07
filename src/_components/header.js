@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import ReactDOM from "react-dom";
 import useWindowScrollPosition from "@rehooks/window-scroll-position";
-
+import { Link, NavLink } from "react-router-dom";
 import '../App.css';
 import { makeStyles } from '@material-ui/core/styles';
 import Icon from '@material-ui/core/Icon';
@@ -10,7 +9,8 @@ import InputLabel from '@material-ui/core/InputLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import FormControl from '@material-ui/core/FormControl';
 import SearchIcon from '@material-ui/icons/Search';
-import Logo from "../assets/ghishniz-logo.png"
+import Logo from "../assets/ghishniz-logo.png";
+import Recipes from './recipePage/recipes'
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -50,7 +50,7 @@ const Header = ()=>{
                                     <a href="http://ghishniz.ir">Home</a>
                                 </li>
                                 <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-713">
-                                <a href="http://ghishniz.ir">Recipes</a>
+                                <Link to="/recipes">Recipes</Link>
                                 </li>
                                 <li className="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-730">
                                     <a href="http://ghishniz.ir">Login</a>
