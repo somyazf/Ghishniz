@@ -3,6 +3,8 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Home from './_components/mainPage/home';
 import Header from './_components/header';
 import Footer from './_components/footer';
+import Recipes from './_components/recipePage/recipes';
+import Recipe from './_components/recipePage/recipe';
 import './App.css';
 
 const App = (props) =>{
@@ -12,6 +14,8 @@ const App = (props) =>{
             <Route exact path="/" component={Home}/>
             <Route path="/header" component={Header}/>
             <Route path="/footer" component={Footer}/>
+            <Route path="/recipes" component={Recipes}/>
+            <Route path="/recipe/:id" component={Recipe} />
           </Switch>
         </Router>
       </>
