@@ -1,22 +1,31 @@
 import React from 'react';
 import Header from '../header';
 import Footer from '../footer';
-import MostPointSec from './mostPoints/mostPoints';
-import MostVisitedSec from './mostVisited/mostVisited';
-import Suggestion from './suggestions/suggestions';
-import Title from './title/title';
+import Sidebar from '../sidebar';
+import MostFavoritedSec from './mostVisited/mostVisited';
+import RecentlyAddedSec from './mostPoints/mostPoints';
 import Banner from '../banner';
-import Search from '../recipePage/search'
+import Offer  from "./offerSec";
+import ButtonBases  from "./tabs/tabs";
+import { Col, Row, Container, TabContainer} from 'react-bootstrap';
+
 export default function Home() {
     return <>
         <Header/>
         <Banner/>
-        <Title title="Most Visited"/>
-        <MostPointSec/>
-        <Title title="Most Visited"/>
-        <MostVisitedSec/>
-        <Title title="Most Visited"/>
-        <Suggestion/>
+        <Container fluid className="mainContainer">
+            <ButtonBases/>
+            <Row>
+                <Col sm={3}>
+                    <Sidebar/>            
+                </Col>
+                <Col sm={9}>
+                    <RecentlyAddedSec className="recentlyAddedSec"/>
+                    <Offer className="offerSec"/>
+                    <MostFavoritedSec/>            
+                </Col>
+            </Row>
+        </Container>
         <Footer/>
     </>
 }
