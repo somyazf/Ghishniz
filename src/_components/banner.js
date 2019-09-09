@@ -9,6 +9,7 @@ export default function Banner() {
         <Col className="banner">
           <div className="bannerText">
             <h1>Welcome to Ghishniz</h1>
+            <h3>Discover Recipes</h3>
             <Button size="lg">
               SEARCH RECIPE
             </Button>
