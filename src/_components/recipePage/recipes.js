@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Loading from '../../assets/restaurants_plus_loading_animation_for_dribbble.gif'
 import axios from 'axios';
 import useSpoonacularApi from './search';
