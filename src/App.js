@@ -15,7 +15,7 @@ const App = (props) =>{
             <Route path="/header" component={Header}/>
             <Route path="/footer" component={Footer}/>
             <Route path="/recipes" component={Recipes}/>
-            <Route path="/recipe/:id" component={Recipe} />
+            <Route path="/recipe" component={Recipe} />
           </Switch>
         </Router>
       </>

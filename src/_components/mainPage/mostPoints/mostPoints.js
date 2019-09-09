@@ -9,11 +9,16 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Rate from "../icons/rating";
 import EyeIcon from "../icons/eyeIcon";
+import UserIcon from "../icons/userIcon";
 import FavoriteFood from "../icons/favorite";
-import DetailButtons from '../button/button.js'
-import sug3 from '../../../assets/sug3.jpeg'
+import DetailButtons from '../button/button.js';
+import Divider from '@material-ui/core/Divider';
+import sug3 from '../../../assets/sug3.jpeg';
 
 const useStyles = makeStyles(theme => ({
+  root:{
+    marginBottom: 45
+  },
   card: {
     maxWidth: 345
   },
@@ -30,6 +35,13 @@ const useStyles = makeStyles(theme => ({
   },
   expandOpen: {
     transform: "rotate(180deg)"
+  },
+  divider: {
+    marginBottom: '33px',
+    height: '3px',
+    width: '13%',
+    margin: '10px auto',
+    backgroundColor: '#0ec145'
   }
 }));
 
@@ -38,25 +50,19 @@ export default function Suggestions() {
 
   const suggestions = [
     {
-      title: "ghorme sabzi",
+      title: "Asian Chicken Noodles",
       created_at: "September 14, 2016",
       description:
         "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like."
     },
     {
-      title: "Itlian food",
+      title: "Italiano Salad Mixed",
       created_at: "September 14, 2016",
       description:
         "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like."
     },
     {
-      title: "kashke bademjun",
-      created_at: "September 14, 2016",
-      description:
-        "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like."
-    },
-    {
-      title: "kashke bademjun",
+      title: "Paella",
       created_at: "September 14, 2016",
       description:
         "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like."
@@ -66,34 +72,32 @@ export default function Suggestions() {
     <>
       <Grid container className={classes.root} spacing={2}>
         <Grid item xs={12}>
+          <Typography variant="h4" align="center" gutterBottom>
+            Recently added
+          </Typography>
+          <Divider variant="middle" className={classes.divider}/>
           <Grid container justify="center" spacing={4}>
             {suggestions.map((value, i) => (
-              <Grid key={i} item md={2}>
+              <Grid key={i} item lg={4}>
                 <Card className={classes.card}>
-                  <CardHeader
-                    title={value.title}
-                    subheader={value.created_at}
-                  />
                   <CardMedia
                     className={classes.media}
                     image={sug3}
                     title="Paella dish"
                   />
-                  <CardContent>
-                    <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      component="p"
-                    >
-                      {value.description}
-                    </Typography>
+                  <CardHeader
+                    title={value.created_at}
+                    subheader={value.title}
+                  />
+                  <CardContent>                   
+                    <Rate/>
                   </CardContent>
-                  <CardActions disableSpacing>
+                  <CardActions>
                     <FavoriteFood/>
                     <EyeIcon/>
-                    <Rate/>
+                    <UserIcon/>by John Muler
+                    <DetailButtons/>  
                   </CardActions>
-                  <DetailButtons/>
                 </Card>
               </Grid>
             ))}

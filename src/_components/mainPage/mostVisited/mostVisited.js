@@ -7,13 +7,18 @@ import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
+import Paper from '@material-ui/core/Paper';
 import Rate from "../icons/rating";
 import EyeIcon from "../icons/eyeIcon";
 import FavoriteFood from "../icons/favorite";
-import DetailButtons from '../button/button.js'
-import sug1 from '../../../assets/sug1.jpg'
+import DetailButtons from '../button/button.js';
+import Divider from '@material-ui/core/Divider';
+import sug1 from '../../../assets/sug1.jpg';
 
 const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1,
+  },
   card: {
     maxWidth: 345
   },
@@ -30,6 +35,13 @@ const useStyles = makeStyles(theme => ({
   },
   expandOpen: {
     transform: "rotate(180deg)"
+  },
+  divider: {
+    marginBottom: '33px',
+    height: '3px',
+    width: '13%',
+    margin: '10px auto',
+    backgroundColor: '#0ec145'
   }
 }));
 
@@ -53,12 +65,6 @@ export default function Suggestions() {
       created_at: "September 14, 2016",
       description:
         "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like."
-    },
-    {
-      title: "kashke bademjun",
-      created_at: "September 14, 2016",
-      description:
-        "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like."
     }
   ];
 
@@ -66,34 +72,38 @@ export default function Suggestions() {
     <>
       <Grid container className={classes.root} spacing={2}>
         <Grid item xs={12}>
+          <Typography variant="h4" align="center" gutterBottom>
+            Most Favorited Recipes
+          </Typography>
+          <Divider variant="middle" className={classes.divider}/>
           <Grid container justify="center" spacing={4}>
             {suggestions.map((value, i) => (
-              <Grid key={i} item md={2}>
+              <Grid key={i} item lg={4}>
                 <Card className={classes.card}>
-                  <CardHeader
-                    title={value.title}
-                    subheader={value.created_at}
-                  />
                   <CardMedia
                     className={classes.media}
                     image={sug1}
                     title="Paella dish"
                   />
+                  <CardHeader
+                    subheader={value.created_at}
+                    title={value.title}
+                  />
                   <CardContent>
-                    <Typography
+                    {/* <Typography
                       variant="body2"
                       color="textSecondary"
                       component="p"
                     >
                       {value.description}
-                    </Typography>
+                    </Typography> */}
                   </CardContent>
                   <CardActions disableSpacing>
                     <FavoriteFood/>
                     <EyeIcon/>
                     <Rate/>
+                    <DetailButtons/>  
                   </CardActions>
-                  <DetailButtons/>
                 </Card>
               </Grid>
             ))}
