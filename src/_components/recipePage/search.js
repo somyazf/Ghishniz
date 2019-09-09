@@ -1,46 +1,32 @@
-import React, { Component } from 'react';
-import './App.css';
-
-import Form from "./components/Form";
-import Recipes from "./components/Recipes";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const SpoonacularApi = "94be430aadf644f6a8c8c95abbcce4c1";
+const baseUrl = "https://api.spoonacular.com";
+const imgUrl = "https://webknox.com/recipeImages/";
 
-class Recipes extends Component {
-  state = {
-    recipes: []
-  }
-  getRecipe = async (e) => {
-    const recipeName = e.target.elements.recipeName.value;
-    const baseUrl = 'https://api.spoonacular.com';
-    e.preventDefault();
-    const api_call = await fetch(`https://cors-anywhere.herokuapp.com/{baseUrl}/recipes/search?apiKey=${SpoonacularApi}&query=${recipeName}&_number=10`);
-    
-    const data = await api_call.json();
-    this.setState({ recipes: data.results });
-    console.log(this.state.recipes);
-  }
-  componentDidMount = () => {
-    const json = localStorage.getItem("recipes");
-    const recipes = JSON.parse(json);
-    this.setState({ recipes });
-  }
-  componentDidUpdate = () => {
-    const recipes = JSON.stringify(this.state.recipes);
-    localStorage.setItem("recipes", recipes);
-  }
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Recipe Search</h1>
-        </header>
-        <Form getRecipe={this.getRecipe} />
-        <Recipes recipes={this.state.recipes} />
-      </div>
+const useSpoonacularApi = () => {
+    const [data, setData] = useState([]);
+    const [url, setUrl] = useState(
+        `${baseUrl}/recipes/search?apiKey=${SpoonacularApi}&query=beef&_number=12`,
     );
+    const [isLoading, setIsLoading] = useState(false);
+    const [isError, setIsError] = useState(false);
+    useEffect(() => {
+        const fetchData = async () => {
+            setIsError(false);
+            setIsLoading(true);
+            try {
+            const api_call = await axios(url);
+            setData(api_call.data.results);
+            } catch (error) {
+                setIsError(true);
+            }
+            setIsLoading(false);
+        };
+        fetchData();
+      }, [url]);
+
+    return [{ data, isLoading, isError }, setUrl];
   }
-}
-
-export default App;
-
+export default useSpoonacularApi;
