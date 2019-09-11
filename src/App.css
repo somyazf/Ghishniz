@@ -440,3 +440,8 @@ input:-webkit-autofill {
   margin: 20px auto;
   border-top-width: 3px;
 }
+/* Login*/
+.loReBg{
+  background: url('.\assets\login-register-bg.jpg') center/cover no-repeat;
+  height: 100vh;
+}
