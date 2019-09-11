@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import InnerSidebar from "../innerPageSidebar";
 import Typography from "@material-ui/core/Typography";
@@ -11,6 +11,7 @@ import FavoriteFood from "../mainPage/icons/favorite";
 import Divider from '@material-ui/core/Divider';
 import sug1 from '../../assets/sug1.jpg';
 import { Link } from "react-router-dom";
+import axios from 'axios';
 
 const SpoonacularApi = "94be430aadf644f6a8c8c95abbcce4c1";
 const baseUrl = "https://api.spoonacular.com";
@@ -44,8 +45,31 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Recipe = () =>  {
+const Recipe = (props) =>  {
+  const title = props.location.state.recipe;
+  const [data, setData] = useState([]);
+  const [url, setUrl] = useState(
+    `${baseUrl}/recipes/search?apiKey=${SpoonacularApi}&query=${title}`,
+);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+  useEffect(() => {
+      const fetchData = async () => {
+          setIsError(false);
+          setIsLoading(true);
+          try {
+          const api_call = await axios(url);
+          setData(api_call.data.results[0]);
+          } catch (error) {
+              setIsError(true);
+          }
+          setIsLoading(false);
+      };
+      fetchData();
+    }, [url]);
+
   const classes = useStyles();
+  const recipe = data;
     return <>
       <Grid container spacing={2}>
         <Grid item xs>
@@ -55,7 +79,7 @@ const Recipe = () =>  {
           <Grid className={classes.root}>
             <Grid item lg={6}>
               <Typography variant="h4" component="h3" align="left" gutterBottom>
-                Recipe Title
+                {recipe.title}
               </Typography>
               <Rate/>
               <Grid className={classes.flexDivs}>
@@ -102,12 +126,12 @@ const Recipe = () =>  {
           <div>
           <Divider/>
           </div>
-          <Grid container lg = "6">
+          <Grid container lg={6}>
               <Grid>
                 <Typography variant="h3" gutterBottom>
                   Ingredients
                 </Typography>
-                <Typography variant="subtitle" gutterBottom>
+                <Typography variant="subtitle1" gutterBottom>
                   - 4 bone-in ribeye pork chops (rib, 3/4-inch thick)
                   - 2 cloves garlic (peeled)
                   - 1 cup fresh basil (packed)
