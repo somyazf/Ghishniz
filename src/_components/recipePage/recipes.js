@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Loading from '../../assets/restaurants_plus_loading_animation_for_dribbble.gif'
 import axios from 'axios';
+import InnerSidebar from "../innerPageSidebar";
 import useSpoonacularApi from './search';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from "@material-ui/core/Typography";
@@ -87,7 +88,7 @@ const Recipes = () => {
     return <>
         <Grid container>
             <Grid item xs>
-             sidebar
+                <InnerSidebar/>
             </Grid>
             <Grid item xs={10} >
                 <Grid className={classes.centeredDiv}>
