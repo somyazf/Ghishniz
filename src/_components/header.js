@@ -40,23 +40,23 @@ const Header = ()=>{
                 <div className="site-header-content">
                     <div className="site-branding">
                         <div className="site-name">
-                            <a href="http://ghishniz.ir" rel="home"><img src={Logo} alt="logo"/></a>
+                            <Link to="/"><img src={Logo} alt="logo"/></Link>
                         </div>						
                     </div> {/* Logo */}
                     <nav className="main-navigation">		
                         <div className="menu-main-container">
                             <ul id="primary-menu" className="menu">
                                 <li className="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-703">
-                                    <a href="http://ghishniz.ir">Home</a>
+                                    <Link to="/">Home</Link>
                                 </li>
                                 <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-713">
-                                <Link to="/recipes">Recipes</Link>
+                                    <Link to="/recipes">Recipes</Link>
                                 </li>
                                 <li className="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-730">
-                                    <a href="http://ghishniz.ir">Login</a>
+                                    <Link to="/login">Login</Link>
                                 </li>
                                 <li className="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-731">
-                                   <a href="http://ghishniz.ir">Register</a>
+                                    <Link to="/register">Register</Link>
                                 </li>
                             </ul>
                         </div>													
