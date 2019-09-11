@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import useWindowScrollPosition from "@rehooks/window-scroll-position";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, withRouter } from "react-router-dom";
 import '../App.css';
 import { makeStyles } from '@material-ui/core/styles';
 import Icon from '@material-ui/core/Icon';
@@ -100,4 +100,5 @@ function TestNav() {
       <Header/>
     );
   }
-export default Header;
+withRouter(Header);
+export {Header};
