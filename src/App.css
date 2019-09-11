@@ -150,11 +150,15 @@ header .search-form {
 }
 /*Banner*/
 .banner{
-  background: url('.\assets\banner.jpg')  fixed center/contain;
-  height: 48.99vw;
+  background: url('.\assets\banner1.jpg')  fixed center/contain;
+  height: 50vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
 }
 .bannerText{
   display: flex;
@@ -177,8 +181,8 @@ header .search-form {
   padding-bottom: 30px;
 }
 .bannerText button{
-  background: #f04900;
-  color: white;
+  background: #df6c3b;
+  color: rgb(37, 31, 31);
 }
 /*Home*/
 

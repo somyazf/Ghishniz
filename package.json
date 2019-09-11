@@ -18,6 +18,8 @@
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
+    "react-scrolling-color-background": "^1.0.2",
+    "scroll-background": "^1.0.5",
     "spoonacular_api": "^1.0.0"
   },
   "scripts": {
