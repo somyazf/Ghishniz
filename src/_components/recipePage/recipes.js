@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import Loading from '../../assets/restaurants_plus_loading_animation_for_dribbble.gif'
+import Loading from '../../assets/restaurants_plus_loading_animation_for_dribbble.gif';
+import { Link,withRouter } from "react-router-dom";
 import axios from 'axios';
 import InnerSidebar from "../innerPageSidebar";
 import useSpoonacularApi from './search';
@@ -16,11 +17,11 @@ import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import Rate from "../mainPage/icons/rating";
-import DetailButtons from '../mainPage/button/button.js';
+import Button from "@material-ui/core/Button";
 
 const SpoonacularApi = "94be430aadf644f6a8c8c95abbcce4c1";
 const baseUrl = "https://api.spoonacular.com";
-const imgUrl = "https://webknox.com/recipeImages/";
+const imgUrl = "https://spoonacular.com/recipeImages/";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -83,7 +84,7 @@ const useStyles = makeStyles(theme => ({
 const Recipes = () => {
     const classes = useStyles();
     const [query, setQuery] = useState('beef');
-    const [{ data, isLoading, isError }, doFetch] = useSpoonacularApi();
+    const [{ data, totalResults, isLoading, isError }, doFetch] = useSpoonacularApi();
     
     return <>
         <Grid container>
@@ -114,7 +115,7 @@ const Recipes = () => {
                 <Grid className={classes.margin}>
                     <Grid className={classes.margin}>
                         <Typography>
-                            {data.length} suggested recipes
+                            {totalResults.totalResults} suggested recipes
                         </Typography>
                     </Grid>
                     <Grid>
@@ -145,7 +146,11 @@ const Recipes = () => {
                                                 />
                                                 <CardActions disableSpacing>
                                                     <Rate/>
-                                                    <DetailButtons/>   
+                                                    <Button type="button" component={Link} to={{ 
+                                                        pathname: `/recipe/${recipe.id}`,
+                                                        state: { recipe: recipe.title }
+                                                        }} 
+                                                        variant="outlined" size="small">Detail</Button>  
                                                 </CardActions>
                                             </Card>
                                         </Grid>
