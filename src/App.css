@@ -398,3 +398,45 @@ input:-webkit-autofill {
   width: 220px;
   border-radius: 25px;
 }
+/*innersidebar*/
+.sidebarMainNavigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  box-sizing: border-box;
+  z-index: 5005;
+  transition: all .6s ease;
+  overflow: auto;
+  padding: 0;
+  align-items: center;
+  color: #232323;
+  line-height: 2rem;
+}
+.sidebarMainNavigation a {
+  color: #565252;
+  text-decoration: none;
+}
+.sidebarMainNavigation a:hover {
+  color: #1c1c1c;
+}
+.menuNav{
+  margin: 2.5em 0px 33px;
+}
+.logoSec{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2.5em 0 0;
+}
+.logoSec img{
+  width: 110px;
+}
+.logoSec hr{
+  width: 17%;
+  margin: 20px auto;
+  border-top-width: 3px;
+}
