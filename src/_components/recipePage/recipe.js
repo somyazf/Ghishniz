@@ -42,6 +42,9 @@ const useStyles = makeStyles(theme => ({
   },
   instButton: {
     backgroundColor:' #78b507',
+  },
+  infoSec: {
+    padding: '40px 108px',
   }
 }));
 
@@ -77,7 +80,7 @@ const Recipe = (props) =>  {
         </Grid>
         <Grid item xs={10} >
           <Grid className={classes.root}>
-            <Grid item lg={6}>
+            <Grid item lg={6} className={classes.infoSec}>
               <Typography variant="h4" component="h3" align="left" gutterBottom>
                 {recipe.title}
               </Typography>
@@ -126,7 +129,7 @@ const Recipe = (props) =>  {
           <div>
           <Divider/>
           </div>
-          <Grid container lg={6}>
+          <Grid container className={classes.infoSec}>
               <Grid>
                 <Typography variant="h3" gutterBottom>
                   Ingredients
