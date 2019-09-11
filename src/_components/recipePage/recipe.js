@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from "@material-ui/core/styles";
+import InnerSidebar from "../innerPageSidebar";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
@@ -48,7 +49,7 @@ const Recipe = () =>  {
     return <>
       <Grid container spacing={2}>
         <Grid item xs>
-          sidebar
+        <InnerSidebar/>
         </Grid>
         <Grid item xs={10} >
           <Grid className={classes.root}>
