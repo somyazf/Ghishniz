@@ -36,6 +36,18 @@ const useStyles = makeStyles(theme =>({
     },
     textFieldFont: {
         fontSize: 21,
+    },
+    button: {
+        borderRadius: 20,
+        padding: '8px 20px',
+    },
+    loginBtn: {
+        background: 'linear-gradient(to right, #F37335, #FDC830)',
+        marginRight: '15px',
+        padding: '8px 20px',
+        borderRadius: 20,
+        padding: '8px 20px',
+        color: 'white',
     }
 }));
 
@@ -48,7 +60,6 @@ const LoginPage = (props) => {
     const [responseMessage,setResponseMessage] = useState(null);
 
     const classes = useStyles();
-
     const handleChange = ({target:{name,value}}) => {
         setValues({ ...values, [name]: value });
     };
@@ -110,8 +121,8 @@ const LoginPage = (props) => {
                             margin="normal"
                             type="password"
                         />
-                        <Button type="submit" size="small" variant="contained" color="primary">Login</Button>
-                        <Button type="button" component={Link} to="/register" variant="outlined" size="small">Register</Button>
+                        <Button type="submit" size="small" variant="contained"  className={classes.loginBtn}>Login</Button>
+                        <Button type="button" component={Link} to="/register" variant="outlined" size="small" className={classes.button}>Register</Button>
                     </form>
                     <Snackbar
                         anchorOrigin={{
