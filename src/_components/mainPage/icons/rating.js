@@ -1,17 +1,22 @@
 import React from "react";
-import Rating from "@material-ui/lab/Rating";
+import RatingComponent from 'react-rating-component';
 
 export default function SimpleRating() {
-  const [value, setValue] = React.useState(1);
+  const [rating, setRating] = React.useState(0);
+
+  const onStarClick = (nextValue, prevValue, name) => {
+    setRating(nextValue);
+  }
+
   return (
     <div>
-      <Rating
-        name="simple-controlled"
-        value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue);
-        }}
+      <RatingComponent
+        name="rate1"
+        starCount={5}
+        value={rating}
+        onStarClick={onStarClick}
       />
+      <span>Rating from state: {rating}</span>
     </div>
   );
 }
