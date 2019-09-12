@@ -1,8 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Home from './_components/mainPage/home';
-import Header from './_components/header/header';
-import Footer from './_components/footer';
 import Recipes from './_components/recipePage/recipes';
 import Recipe from './_components/recipePage/recipe';
 import {LoginPage} from "./_components/login";
