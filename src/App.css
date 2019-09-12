@@ -8,7 +8,9 @@ body{
 }
 a{
   text-decoration: none;
-  color: #fff;
+  color: #665555;
+  font-weight: bold;
+  font-size: 20px;
 }
 .container-fluid {
   padding-right: 0 !important; 
@@ -19,20 +21,22 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 222;
+  z-index: 1;
   width: 100%;
+  background: #fff;
+  height: 85px;
 }
-.mobile-navigation {
+/* .mobile-navigation {
   background: #fff;
   border-bottom: solid 1px #ededed;
   display: none;
   line-height: 1.8;
   padding: 20px 6%;
   text-align: left;
-}
+} */
 .site-header-container {
   display: block;
-  margin: 0 auto;
+  margin: 8px auto;
   padding: 10px 6%;
   max-width: 1660px;
   position: relative;
@@ -42,17 +46,18 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
 }
 header .main-navigation {
-  text-align: center;
+  text-align: right;
   width: 80%;
-  line-height: 80px;
+  line-height: 10px;
 }
-header .main-navigation ul {
+/* header .main-navigation ul {
   list-style: none;
   margin: 0;
   padding-left: 0;
-}
+} */
 header .main-navigation li {
   display: inline-block;
   margin: 0 15px 0 15px;
@@ -62,8 +67,9 @@ header .main-navigation li {
   padding-right: 15px;
 }
 header .main-navigation .current_page_item > a, header .main-navigation .current-menu-item > a, header .main-navigation .current_page_ancestor > a, header .main-navigation .current-menu-ancestor > a, header .main-navigation li:hover > a, header .main-navigation li.focus > a {
-  color: #e75b1e;
-  font-size: 18px;
+  color: #f86b2e;
+  font-size: 20px;
+  font-weight: bold;
 }
 .site-header .main-navigation ul li.menu-item-has-children:before, .site-header .main-navigation ul li.page_item_has_children:before {
   -moz-osx-font-smoothing: grayscale;
@@ -143,47 +149,54 @@ header .search-form {
   top: 0;
 }
 .site-name{
-  height: 70px;
+  height: 60px;
 }
 .site-name img{
     height: 100%;
 }
+
+
 /*Banner*/
 .banner{
-  background: url('.\assets\banner.jpg')  fixed center/contain;
-  height: 50vw;
+  background: 
+    linear-gradient(
+      rgba(245, 128, 74, 0.52),
+      rgba(216, 164, 104, 0.493)
+    ), url('.\assets\banner.jpg')  fixed center/contain;
+  height: 35vw;
   display: flex;
   justify-content: center;
   align-items: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  
 }
+
+
 .bannerText{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.bannerText h1{
+/* .bannerText h1{
   letter-spacing: 2.7px;
   font-size: 74px;
   color: #fff;
   padding-bottom: 0px;
   padding-top: 100px;
-}
-.bannerText h3{
+} */
+/* .bannerText h3{
   letter-spacing: 2.7px;
   font-size: 34px;
   color: #fff;
   padding-top: 20px;
   padding-bottom: 30px;
-}
-.bannerText button{
+} */
+/* .bannerText button{
   background: #df6c3b;
   color: rgb(37, 31, 31);
-}
+} */
 /*Home*/
 
 /*Footer*/
