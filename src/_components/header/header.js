@@ -97,4 +97,5 @@ function TestNav() {
       <Header/>
     );
   }
-export default Header;
+withRouter(Header);
+export {Header};
