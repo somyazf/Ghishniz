@@ -150,7 +150,11 @@ header .search-form {
 }
 /*Banner*/
 .banner{
-  background: url('.\assets\banner.jpg')  fixed center/contain;
+  background: 
+    linear-gradient(
+      rgba(245, 128, 74, 0.52),
+      rgba(216, 164, 104, 0.493)
+    ), url('.\assets\banner.jpg')  fixed center/contain;
   height: 50vw;
   display: flex;
   justify-content: center;
@@ -158,8 +162,9 @@ header .search-form {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  
 }
+
+
 .bannerText{
   display: flex;
   justify-content: center;
