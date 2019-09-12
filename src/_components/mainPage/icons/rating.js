@@ -2,7 +2,7 @@ import React from "react";
 import Rating from "@material-ui/lab/Rating";
 
 export default function SimpleRating() {
-  const [value, setValue] = React.useState(2);
+  const [value, setValue] = React.useState(1);
   return (
     <div>
       <Rating

@@ -150,7 +150,7 @@ header .search-form {
 }
 /*Banner*/
 .banner{
-  background: url('.\assets\banner1.jpg')  fixed center/contain;
+  background: url('.\assets\banner.jpg')  fixed center/contain;
   height: 50vw;
   display: flex;
   justify-content: center;
