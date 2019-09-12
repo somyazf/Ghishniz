@@ -5,13 +5,11 @@ import "../../App.css";
 
 function LogoPage() {
   return (
-    <div className="site-branding">
       <div className="site-name">
         <Link to="/">
           <img src={Logo} alt="logo" />
         </Link>
       </div>
-    </div>
   );
 }
 
