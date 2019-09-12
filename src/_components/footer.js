@@ -49,9 +49,9 @@ const useStyles = makeStyles(theme => ({
         </div>    
         <div className="social">
             <Grid container spacing={3} className={classes.root}>
-                    <FontAwesomeIcon icon={faGithubAlt} size="lg" className={classes.iconHover}/>
-                    <FontAwesomeIcon icon={faInstagram} size="lg" className={classes.iconHover}/>
-                    <FontAwesomeIcon icon={faFacebook} size="lg" className={classes.iconHover}/>
+              <FontAwesomeIcon icon={faGithubAlt} size="lg" className={classes.iconHover}/>
+              <FontAwesomeIcon icon={faInstagram} size="lg" className={classes.iconHover}/>
+              <FontAwesomeIcon icon={faFacebook} size="lg" className={classes.iconHover}/>
             </Grid>
         </div>
         <div className="footer-bottom top-divider">
