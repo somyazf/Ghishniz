@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import useWindowScrollPosition from "@rehooks/window-scroll-position";
-import { Link, NavLink, withRouter } from "react-router-dom";
-import '../App.css';
+import { Link, NavLink } from "react-router-dom";
+import '../../App.css';
 import { makeStyles } from '@material-ui/core/styles';
 import Icon from '@material-ui/core/Icon';
 import Input from '@material-ui/core/Input';
@@ -9,8 +9,8 @@ import InputLabel from '@material-ui/core/InputLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import FormControl from '@material-ui/core/FormControl';
 import SearchIcon from '@material-ui/icons/Search';
-import Logo from "../assets/ghishniz-logo.png";
-import Recipes from './recipePage/recipes'
+import Recipes from '../recipePage/recipes'
+import LogoPage from "./logo";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -38,11 +38,8 @@ const Header = ()=>{
             </nav>	
             <div className="site-header-container">
                 <div className="site-header-content">
-                    <div className="site-branding">
-                        <div className="site-name">
-                            <Link to="/"><img src={Logo} alt="logo"/></Link>
-                        </div>						
-                    </div> {/* Logo */}
+                    <LogoPage/>
+                    {/* Logo */}
                     <nav className="main-navigation">		
                         <div className="menu-main-container">
                             <ul id="primary-menu" className="menu">

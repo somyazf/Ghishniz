@@ -14,6 +14,7 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import desktopLogo from '../assets/desktop-logo.png';
 import background from '../assets/login-register-bg.jpg';
+import LogoPage from './header/logo';
 
 const useStyles = makeStyles(theme =>({
     card: {
@@ -94,7 +95,7 @@ const RegisterPage = (props) => {
             <Grid lg={6}>
                 <Grid className={classes.formWrap}>
                     <Grid lg={6} className={classes.logoMargin}>
-                        <img src={desktopLogo} alt="desktopLogo"/>
+                        <LogoPage/>
                     </Grid>
                     <form>
                         <Typography variant="h3" component="h1" color="textSecondary" gutterBottom>

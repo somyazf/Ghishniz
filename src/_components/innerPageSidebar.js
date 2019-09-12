@@ -8,6 +8,7 @@ import ButtonBase from '@material-ui/core/ButtonBase';
 import Grid from "@material-ui/core/Grid";
 import Logo from "../assets/ghishniz-logo.png";
 import Fab from "@material-ui/core/Fab";
+import LogoPage from './header/logo';
 
 
 const useStyles = makeStyles(theme => ({
@@ -42,7 +43,7 @@ export default function InnerSidebar() {
           <Col lg="2" className="sidebarMainNavigation ">
             <div className="nav-section">
               <div className="logoSec">
-                <img src = {Logo}/>
+                <LogoPage/>
                 <hr/>
               </div>
               <Fab variant="extended" href="#" className={classes.button}>
