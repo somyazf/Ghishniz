@@ -1,7 +1,8 @@
 import React from 'react';
-import banner from '../assets/banner.jpg';
 import '../App.css';
 import { Col, Row, Image, Container, Button } from 'react-bootstrap';
+
+
 export default function Banner() {
   return (
     <Container fluid>
