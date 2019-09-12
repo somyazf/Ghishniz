@@ -1,6 +1,9 @@
 import React from 'react';
 import '../App.css';
-import { Col, Row, Image, Container, Button } from 'react-bootstrap';
+import { Col, Row, Container} from 'react-bootstrap';
+import MainPageSearch from './mainPageSearch/searchMainPage';
+
+
 
 
 export default function Banner() {
@@ -8,13 +11,7 @@ export default function Banner() {
     <Container fluid>
       <Row>
         <Col className="banner">
-          <div className="bannerText">
-            <h1>Welcome to Ghishniz</h1>
-            <h3>Discover Recipes</h3>
-            <Button size="lg">
-              SEARCH RECIPE
-            </Button>
-          </div>
+          <MainPageSearch/>
         </Col>
       </Row>
     </Container>
