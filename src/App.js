@@ -19,7 +19,7 @@ const App = (props) =>{
             {/* <Route path="/header" component={Header}/>
             <Route path="/footer" component={Footer}/> */}
             <Route path="/recipes" component={Recipes}/>
-            <Route path="/recipe" component={Recipe} />
+            <Route path="/recipe/:id" component={Recipe} />
             <Route path="/login" exact component={LoginPage}/>
             <Route path="/register" exact component={RegisterPage}/>
           </Switch>

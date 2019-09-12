@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from "react-router-dom";
 import '../App.css';
 import Logo from "../assets/ghishniz-logo.png";
 import Grid from '@material-ui/core/Grid';
@@ -60,4 +61,5 @@ const useStyles = makeStyles(theme => ({
         </div>
     </footer>
 }
-export default Footer;
+withRouter(Footer);
+export {Footer};
