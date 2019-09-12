@@ -7,6 +7,7 @@ const imgUrl = "https://webknox.com/recipeImages/";
 
 const useSpoonacularApi = () => {
     const [data, setData] = useState([]);
+    const [totalResults, setTotalResults] = useState([]);
     const [url, setUrl] = useState(
         `${baseUrl}/recipes/search?apiKey=${SpoonacularApi}&query=beef&_number=12`,
     );
@@ -19,6 +20,7 @@ const useSpoonacularApi = () => {
             try {
             const api_call = await axios(url);
             setData(api_call.data.results);
+            setTotalResults(api_call.data);
             } catch (error) {
                 setIsError(true);
             }
@@ -27,6 +29,6 @@ const useSpoonacularApi = () => {
         fetchData();
       }, [url]);
 
-    return [{ data, isLoading, isError }, setUrl];
+    return [{ data, totalResults, isLoading, isError }, setUrl];
   }
 export default useSpoonacularApi;
