@@ -1,5 +1,5 @@
 import React from "react";
-import RatingComponent from 'react-rating-component';
+// import RatingComponent from 'react-rating-component';
 
 export default function SimpleRating() {
   const [rating, setRating] = React.useState(0);
@@ -10,12 +10,12 @@ export default function SimpleRating() {
 
   return (
     <div>
-      <RatingComponent
+      {/* <RatingComponent
         name="rate1"
         starCount={5}
         value={rating}
         onStarClick={onStarClick}
-      />
+      /> */}
       <span>Rating from state: {rating}</span>
     </div>
   );
