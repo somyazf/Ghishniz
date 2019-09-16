@@ -7,8 +7,6 @@ import FormControl from "@material-ui/core/FormControl";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 
-
-
 const useStyles = makeStyles(theme => ({
   root: {
     padding: '2px 20px',
@@ -34,12 +32,11 @@ const useStyles = makeStyles(theme => ({
 
 function MainPageSearch() {
   const classes = useStyles();
-
   return (
-      <Paper className={classes.root}>
- <FormControl className={classes.formControl}>
-      <InputLabel className={classes.label} htmlFor="input-with-icon-adornment">Search</InputLabel>
-      <Input 
+    <Paper className={classes.root}>
+      <FormControl className={classes.formControl}>
+        <InputLabel className={classes.label} htmlFor="input-with-icon-adornment">Search</InputLabel>
+        <Input 
         id="input-with-icon-adornment"
         startAdornment={
           <InputAdornment>
@@ -47,10 +44,10 @@ function MainPageSearch() {
           </InputAdornment>
         }
         className={classes.searchIcon}
-      />
-    </FormControl>
-      </Paper>
-   
+        />
+      </FormControl>
+    </Paper>
+  
   );
 }
 
