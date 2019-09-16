@@ -11,7 +11,7 @@ import Rate from "../icons/rating";
 import EyeIcon from "../icons/eyeIcon";
 import UserIcon from "../icons/userIcon";
 import FavoriteFood from "../icons/favorite";
-import DetailButtons from '../button/button.js';
+import DetailButtons from '../buttons/button.js';
 import Divider from '@material-ui/core/Divider';
 import sug3 from '../../../assets/sug3.jpeg';
 
