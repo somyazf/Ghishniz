@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from "react-router-dom";
-import '../App.css';
-import Logo from "../assets/ghishniz-logo.png";
+import '../../App.css';
+import Logo from "../../assets/ghishniz-logo.png"
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import { yellow } from '@material-ui/core/colors';

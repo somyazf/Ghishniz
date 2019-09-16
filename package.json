@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@cogent-labs/react-rating-component": "^1.1.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.22",
     "@fortawesome/free-brands-svg-icons": "^5.10.2",
     "@fortawesome/free-solid-svg-icons": "^5.10.2",
@@ -16,11 +17,13 @@
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.12",
     "react-dom": "^16.8.6",
+    "react-rating-component": "^1.0.0",
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "react-scrolling-color-background": "^1.0.2",
     "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0",
     "scroll-background": "^1.0.5",
     "scroll-nav-template": "^1.0.1",
     "spoonacular_api": "^1.0.0"

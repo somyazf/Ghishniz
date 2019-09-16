@@ -1,21 +1,20 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import Home from './_components/mainPage/home';
-import Recipes from './_components/recipePage/recipes';
-import Recipe from './_components/recipePage/recipe';
-import {LoginPage} from "./_components/login";
-import {RegisterPage} from "./_components/register";
+import Home from './_pages/home.page';
+import {Recipes} from './_pages/recipes.page';
+import Recipe from './_pages/singleRecipe.page';
+import {LoginPage} from "./_pages/login.page";
+import {RegisterPage} from "./_pages/register.page";
+import {PrivateRoute} from './_routes/privateRoute';
+import {history} from './_helpers/history';
+import { connect } from "react-redux";
 import './App.css';
-import LogoPage from './_components/header/logo';
 
-const App = (props) =>{
+const App = ({user}) =>{
     return<>
-        <Router>
+        <Router history={history}>
           <Switch>
-            
-            <Route exact path="/" component={Home}/>
-            {/* <Route path="/header" component={Header}/>
-            <Route path="/footer" component={Footer}/> */}
+            <Route path="/" exact component={Home}/>
             <Route path="/recipes" component={Recipes}/>
             <Route path="/recipe/:id" component={Recipe} />
             <Route path="/login" exact component={LoginPage}/>
@@ -23,6 +22,12 @@ const App = (props) =>{
           </Switch>
         </Router>
       </>
-    
 }
-export default App;
+const mapStateToProps = state => {
+  const {user} = state.authentication;
+  return { user };
+};
+
+const ConnectedApp = connect(mapStateToProps)(App);
+
+export default  ConnectedApp;
