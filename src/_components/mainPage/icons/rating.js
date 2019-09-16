@@ -1,12 +1,11 @@
-import React from "react";
-// import RatingComponent from 'react-rating-component';
+import React from 'react';
+import Rating from '@material-ui/lab/Rating';
+import Box from '@material-ui/core/Box';
 
-export default function SimpleRating() {
-  const [rating, setRating] = React.useState(0);
 
-  const onStarClick = (nextValue, prevValue, name) => {
-    setRating(nextValue);
-  }
+ const SimpleRating = (props) => {
+  const [value, setValue] = React.useState(2);
+  
 
   return (
     <div>
@@ -16,7 +15,19 @@ export default function SimpleRating() {
         value={rating}
         onStarClick={onStarClick}
       /> */}
-      <span>Rating from state: {rating}</span>
+      <Box component="fieldset" mb={3} borderColor="transparent">
+        <Rating
+          name={props.index}
+          value={value}
+          onChange={(event, newValue) => {
+            setValue(newValue);
+          }}
+        />
+      </Box>
+    
     </div>
   );
 }
+
+
+export default SimpleRating;
