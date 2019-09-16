@@ -23,17 +23,9 @@ header {
   left: 0;
   z-index: 1;
   width: 100%;
-  background: #fff;
   height: 85px;
 }
-/* .mobile-navigation {
-  background: #fff;
-  border-bottom: solid 1px #ededed;
-  display: none;
-  line-height: 1.8;
-  padding: 20px 6%;
-  text-align: left;
-} */
+
 .site-header-container {
   display: block;
   margin: 8px auto;
@@ -53,11 +45,7 @@ header .main-navigation {
   width: 80%;
   line-height: 10px;
 }
-/* header .main-navigation ul {
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
-} */
+
 header .main-navigation li {
   display: inline-block;
   margin: 0 15px 0 15px;
@@ -179,24 +167,7 @@ header .search-form {
   align-items: center;
   flex-direction: column;
 }
-/* .bannerText h1{
-  letter-spacing: 2.7px;
-  font-size: 74px;
-  color: #fff;
-  padding-bottom: 0px;
-  padding-top: 100px;
-} */
-/* .bannerText h3{
-  letter-spacing: 2.7px;
-  font-size: 34px;
-  color: #fff;
-  padding-top: 20px;
-  padding-bottom: 30px;
-} */
-/* .bannerText button{
-  background: #df6c3b;
-  color: rgb(37, 31, 31);
-} */
+
 /*Home*/
 
 /*Footer*/

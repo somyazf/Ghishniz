@@ -5,19 +5,18 @@ import Button from '@material-ui/core/Button';
 const useStyles = makeStyles(theme => ({
     button: {
       margin: theme.spacing(2),
-    },
-    input: {
-      display: 'none',
-    },
+      borderRadius:'50px',
+      float:'right'
+    }
 }));
   
 export default function DetailButtons() {
 const classes = useStyles();
 return (
     <div>
-        <Button variant="outlined" color="primary" className={classes.button}>
-        Detail
-        </Button>
+      <Button variant="contained" color="secondary" className={classes.button}>
+        Secondary
+      </Button>
     </div>
     );
 }
