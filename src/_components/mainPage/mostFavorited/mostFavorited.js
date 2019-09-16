@@ -11,7 +11,7 @@ import Paper from '@material-ui/core/Paper';
 import Rate from "../icons/rating";
 import EyeIcon from "../icons/eyeIcon";
 import FavoriteFood from "../icons/favorite";
-import DetailButtons from '../button/button.js';
+import DetailButtons from '../buttons/button.js';
 import Divider from '@material-ui/core/Divider';
 import sug1 from '../../../assets/sug1.jpg';
 
