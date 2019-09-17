@@ -15,9 +15,9 @@ export default function DetailButtons() {
 const classes = useStyles();
 return (
     <div>
-        <Button variant="outlined" color="primary" className={classes.button}>
+        <Button variant="contained" color="secondary" className={classes.button}>
         Detail
-        </Button>
+      </Button>
     </div>
     );
 }

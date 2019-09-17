@@ -57,13 +57,13 @@ export default function Suggestions() {
     },
     {
       title: "Italiano Salad Mixed",
-      created_at: "September 14, 2016",
+      created_at: "September 4, 2016",
       description:
         "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like."
     },
     {
       title: "Paella",
-      created_at: "September 14, 2016",
+      created_at: "September 10, 2016",
       description:
         "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like."
     }
@@ -89,13 +89,14 @@ export default function Suggestions() {
                     title={value.created_at}
                     subheader={value.title}
                   />
-                  <CardContent>                   
-                    <Rate/>
+                  <CardContent>  
+                  <UserIcon/>by John Muler                 
+                    <Rate index={i} />
                   </CardContent>
                   <CardActions>
                     <FavoriteFood/>
                     <EyeIcon/>
-                    <UserIcon/>by John Muler
+                   
                     <DetailButtons/>  
                   </CardActions>
                 </Card>
