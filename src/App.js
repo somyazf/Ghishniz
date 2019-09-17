@@ -5,10 +5,10 @@ import {Recipes} from './_pages/recipes.page';
 import Recipe from './_pages/singleRecipe.page';
 import {LoginPage} from "./_pages/login.page";
 import {RegisterPage} from "./_pages/register.page";
-import {PrivateRoute} from './_routes/privateRoute';
 import {history} from './_helpers/history';
 import { connect } from "react-redux";
 import './App.css';
+import AddNewPost from './views/AddNewPost';
 
 const App = ({user}) =>{
     return<>
@@ -19,7 +19,10 @@ const App = ({user}) =>{
             <Route path="/recipe/:id" component={Recipe} />
             <Route path="/login" exact component={LoginPage}/>
             <Route path="/register" exact component={RegisterPage}/>
+            <Route path="/addnewpost" exact component={AddNewPost}/>
+            
           </Switch>
+          
         </Router>
       </>
 }
