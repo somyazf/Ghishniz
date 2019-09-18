@@ -4,7 +4,6 @@ import { getRecipesInfoService } from "../_service";
 export const getRecipesInfoAction = {
     getRecipesInfo
 }
-debugger
 function getRecipesInfo(id) {
     return dispatch => {
         dispatch(loading());
