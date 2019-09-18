@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
 import InnerSidebar from "../_components/innerPageSidebar/innerPageSidebar";
 import Typography from "@material-ui/core/Typography";
@@ -50,16 +51,13 @@ const useStyles = makeStyles(theme => ({
 const SingleRecipe = (props) =>  {
   // const title = props.location.state.recipe;
   const id = props.location.state.id;
-  const {dispatch, error, loading, items} = props;
-  // const [data, setData] = useState([]);
-//   const [url, setUrl] = useState(
-//     `${baseUrl}/recipes/${id}/information?apiKey=${SpoonacularApi}`,
-// );
+  const {error, loading, items} = props;
+  const recipe = useSelector(state => state.items);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getRecipesInfoAction.getRecipesInfo(id));
+  }, []);
   debugger
-  const componentDidMount = (id) => {
-    dispatch(getRecipesInfoAction.fetchRecipes(id))
-  }
-  
   const classes = useStyles();
 
     return <>
@@ -71,7 +69,7 @@ const SingleRecipe = (props) =>  {
           <Grid className={classes.root}>
             <Grid item lg={6} className={classes.infoSec}>
               <Typography variant="h4" component="h3" align="left" gutterBottom>
-                {items.title}
+                {recipe.title&&recipe.title}
               </Typography>
               <Rate/>
               <Grid className={classes.flexDivs}>
@@ -138,7 +136,7 @@ const SingleRecipe = (props) =>  {
                   Directions
                 </Typography>
                 <Typography variant="subtitle1" gutterBottom>
-                 {items.creditsText}
+                 {recipe.creditsText&&recipe.creditsText}
                   With machine running, drop garlic through feed tube of food processor to mince. Stop, add fresh basil, and process until chopped. Add lemon juice, oil, salt, and pepper and process to make thin wet rub. Spread both sides of pork chops with basil mixture. Let stand 15 to 30 minutes.
                   Prepare a medium-hot fire in grill. Brush the grate clean and oil the grate. Grill chops, over direct heat, turning once, to medium rare doneness, 5 to 6 minutes per side, or until the internal temperature reaches 145 degrees Fahrenheit, followed by a 3-minute rest time.
                 </Typography>
@@ -158,13 +156,13 @@ Definitely top with toasted pine nuts and shaved/grated Parmesan! Makes all the 
     </>
 };
 
-const mapStateToProps = state => {
-  const {loading} = state.getDataReducer;
-  const {items} = state.getDataReducer;
-  const {error} = state.getDataReducer;
+// const mapStateToProps = state => {
+//   const {loading} = state.getDataReducer;
+//   const {items} = state.getDataReducer;
+//   const {error} = state.getDataReducer;
   
-  return { loading, items, error };
-};
+//   return { loading, items, error };
+// };
 
-const ConnectedRecipesPage = withRouter(connect(mapStateToProps)(SingleRecipe));
+const ConnectedRecipesPage = withRouter(connect()(SingleRecipe));
 export {ConnectedRecipesPage as SingleRecipe};
