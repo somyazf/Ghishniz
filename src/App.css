@@ -1,16 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Manjari&display=swap');
 *{
   box-sizing: border-box;
 }
 body{
   overflow-x: hidden;
-  font-family: sans-serif !important;
+  font-family: 'Manjari', sans-serif !important;
   background: rgb(249, 249, 249);
+  font-size: 17px;
+}
+h1, h2, h3, h4, h5, h6, p{
+  font-family: 'Manjari', sans-serif !important;
 }
 a{
   text-decoration: none;
   color: #665555;
-  font-weight: bold;
-  font-size: 20px;
+  font-weight: 600;
+  font-size: 17px;
+}
+a:hover {
+  text-decoration: none;
 }
 .container-fluid {
   padding-right: 0 !important; 
@@ -21,9 +29,10 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 6;
   width: 100%;
   height: 85px;
+  background: #fff;
 }
 
 .site-header-container {
@@ -56,8 +65,6 @@ header .main-navigation li {
 }
 header .main-navigation .current_page_item > a, header .main-navigation .current-menu-item > a, header .main-navigation .current_page_ancestor > a, header .main-navigation .current-menu-ancestor > a, header .main-navigation li:hover > a, header .main-navigation li.focus > a {
   color: #f86b2e;
-  font-size: 20px;
-  font-weight: bold;
 }
 .site-header .main-navigation ul li.menu-item-has-children:before, .site-header .main-navigation ul li.page_item_has_children:before {
   -moz-osx-font-smoothing: grayscale;
