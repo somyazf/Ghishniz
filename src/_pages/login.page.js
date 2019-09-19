@@ -1,21 +1,15 @@
 import React,{useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from "@material-ui/core/Grid";
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import { Link,withRouter } from "react-router-dom";
-import Axios from 'axios';
 import Snackbar from '@material-ui/core/Snackbar';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import { authenticationAction } from "../_actions";
-import desktopLogo from '../assets/desktop-logo.png';
-import background from '../assets/login-register-bg.jpg';
 import LogoPage from '../_components/header/logo';
 import { connect } from "react-redux";
 
@@ -50,7 +44,6 @@ const useStyles = makeStyles(theme =>({
         marginRight: '15px',
         padding: '8px 20px',
         borderRadius: 20,
-        padding: '8px 20px',
         color: 'white',
     }
 }));
