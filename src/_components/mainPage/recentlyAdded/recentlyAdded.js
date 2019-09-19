@@ -96,7 +96,6 @@ export default function Suggestions() {
                   <CardActions>
                     <FavoriteFood/>
                     <EyeIcon/>
-                   
                     <DetailButtons/>  
                   </CardActions>
                 </Card>
