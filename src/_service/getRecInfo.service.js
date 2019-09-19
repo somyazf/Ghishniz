@@ -11,7 +11,6 @@ let timeout = null;
       const CancelToken = axios.CancelToken;
       const source = CancelToken.source();
       timeout = setTimeout(()=>{source.cancel()},TIMEOUT_DELAY);
-      debugger
       const response = await axios({
           url: `${RecipeInformationHost}${id}/information?apiKey=${apiKey}`,
           method: "GET",
