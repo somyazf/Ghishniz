@@ -16,7 +16,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import { authenticationAction } from "../_actions";
 import desktopLogo from '../assets/desktop-logo.png';
 import background from '../assets/login-register-bg.jpg';
-import LogoPage from '../_components/header/logo';
+import LogoPage from '../components/header/logo';
 import { connect } from "react-redux";
 
 const useStyles = makeStyles(theme =>({

@@ -12,7 +12,7 @@ import {
   Button
 } from "shards-react";
 
-import PageTitle from "../_components/common/PageTitle";
+import PageTitle from "../components/common/PageTitle";
 
 class BlogPosts extends React.Component {
   constructor(props) {

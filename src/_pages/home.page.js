@@ -1,12 +1,12 @@
 import React from 'react';
-import {Header} from '../_components/header/header';
-import {Footer} from '../_components/footer/footer';
-import Sidebar from '../_components/mainPage/sidebar/sidebar';
-import MostFavoritedSec from '../_components/mainPage/mostFavorited/mostFavorited';
-import RecentlyAddedSec from '../_components/mainPage/recentlyAdded/recentlyAdded';
-import Banner from '../_components/mainPage/banner/banner';
-import Offer  from "../_components/mainPage/offerSection/offerSec";
-import ButtonBases  from "../_components/mainPage/categoryGrid/categoryGrid";
+import {Header} from '../components/header/header';
+import {Footer} from '../components/footer/footer';
+import Sidebar from '../components/mainPage/sidebar/sidebar';
+import MostFavoritedSec from '../components/mainPage/mostFavorited/mostFavorited';
+import RecentlyAddedSec from '../components/mainPage/recentlyAdded/recentlyAdded';
+import Banner from '../components/mainPage/banner/banner';
+import Offer  from "../components/mainPage/offerSection/offerSec";
+import ButtonBases  from "../components/mainPage/categoryGrid/categoryGrid";
 import { Col, Row, Container, TabContainer} from 'react-bootstrap';
 
 export default function Home() {

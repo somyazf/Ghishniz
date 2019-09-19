@@ -13,6 +13,8 @@ import { Recipes } from "./_pages/recipes.page";
 import Recipe from "./_pages/singleRecipe.page";
 import { LoginPage } from "./_pages/login.page";
 import { RegisterPage } from "./_pages/register.page";
+import Home from './_pages/home.page';
+
 
 export default [
   // {
@@ -26,21 +28,7 @@ export default [
     layout: DefaultLayout,
     component: Home
   },
-  {
-    path: "/blog-overview",
-    layout: DefaultLayout,
-    component: BlogOverview
-  },
-  {
-    path: "/user-profile-lite",
-    layout: DefaultLayout,
-    component: UserProfileLite
-  },
-  {
-    path: "/add-new-post",
-    layout: DefaultLayout,
-    component: AddNewPost
-  },
+
   {
     path: "/recipes",
     layout: DefaultLayout,
@@ -65,5 +53,24 @@ export default [
     path: "/register",
     layout: DefaultLayout,
     component: RegisterPage
+  },  {
+    path: "/blog-overview",
+    layout: DefaultLayout,
+    component: BlogOverview
   },
+  {
+    path: "/user-profile-lite",
+    layout: DefaultLayout,
+    component: UserProfileLite
+  },
+  {
+    path: "/add-new-post",
+    layout: DefaultLayout,
+    component: AddNewPost
+  },
+  // {
+  //   path: "/login-page",
+  //   layout: DefaultLayout,
+  //   component: UserProfileLite
+  // },
 ];

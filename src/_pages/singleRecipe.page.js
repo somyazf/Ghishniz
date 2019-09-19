@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { makeStyles } from "@material-ui/core/styles";
-import InnerSidebar from "../_components/innerPageSidebar/innerPageSidebar";
+import InnerSidebar from "../components/innerPageSidebar/innerPageSidebar";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import Fab from "@material-ui/core/Fab";
-import Rate from "../_components/mainPage/icons/rating";
-import EyeIcon from "../_components/mainPage/icons/eyeIcon";
-import FavoriteFood from "../_components/mainPage/icons/favorite";
+import Rate from "../components/mainPage/icons/rating";
+import EyeIcon from "../components/mainPage/icons/eyeIcon";
+import FavoriteFood from "../components/mainPage/icons/favorite";
 import Divider from '@material-ui/core/Divider';
 import sug1 from '../assets/sug1.jpg';
 import { Link } from "react-router-dom";

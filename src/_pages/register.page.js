@@ -10,7 +10,7 @@ import Axios from 'axios';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
-import LogoPage from '../_components/header/logo';
+import LogoPage from '../components/header/logo';
 
 const useStyles = makeStyles(theme =>({
     textField: {
