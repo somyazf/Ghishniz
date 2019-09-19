@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../assets/ghishniz-logo.png";
+import Logo from "../../assets/newlogo-gishniz.png";
 import { Link } from "react-router-dom";
 import "../../App.css";
 
