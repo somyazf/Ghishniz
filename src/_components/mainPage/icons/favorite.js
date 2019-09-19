@@ -2,30 +2,43 @@ import React from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ToggleButton from '@material-ui/lab/ToggleButton';
-
+import { red } from '@material-ui/core/colors';
 
 const useStyles = makeStyles(theme => ({
     root:{
       color: 'red'
     },
-})
+    iconHover: {
+      '&:hover': {
+        color: red[800],
+      },
+    }
+  })
 )
 
-
 export default function StandaloneToggleButton() {
-    const [selected, setSelected] = React.useState(false);
-    const classes = useStyles();
-    return (
-        
-      <ToggleButton
-        value="!check"
-        selected={!selected}
-        onChange={() => {
-          setSelected(!selected);
-        }}
-        className={classes.root}
-      >
-        <FavoriteIcon />
-      </ToggleButton>
-    );
-  }
+  const classes = useStyles();
+  const [selected, setSelected] = React.useState(false);
+  return (
+      
+    <ToggleButton
+      value="!check"
+      selected={!selected}
+      onChange={() => {
+        setSelected(!selected);
+      }}
+      className={classes.root}
+    >
+      <FavoriteIcon />
+    </ToggleButton>
+  );
+}
+
+function Favorite() {
+  const classes = useStyles();
+  return (
+    <FavoriteIcon className={classes.iconHover} color="error" style={{ fontSize: 30 }}/>
+  );
+}
+
+export {Favorite};
