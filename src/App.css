@@ -427,9 +427,6 @@ input:-webkit-autofill {
   align-items: center;
   margin: 2.5em 0 0;
 }
-.logoSec img{
-  width: 110px;
-}
 .logoSec hr{
   width: 17%;
   margin: 20px auto;
