@@ -1,9 +1,9 @@
 import React from "react";
 import { Container, Row, Col } from "shards-react";
-import PageTitle from "../_components/common/PageTitle";
-import Editor from "../_components/add-new-post/Editor";
-import SidebarActions from "../_components/add-new-post/SidebarActions";
-import SidebarCategories from "../_components/add-new-post/SidebarCategories";
+import PageTitle from "../components/common/PageTitle";
+import Editor from "../components/add-new-post/Editor";
+import SidebarActions from "../components/add-new-post/SidebarActions";
+import SidebarCategories from "../components/add-new-post/SidebarCategories";
 import { withRouter } from "react-router-dom";
 
 const AddNewPost = () => (
