@@ -9,7 +9,8 @@ import MainFooter from "../components/layout/MainFooter";
 const DefaultLayout = ({ children, noNavbar, noFooter }) => (
   <Container fluid>
     <Row>
-      <MainSidebar />
+      {/* change this */}
+      {/* <MainSidebar /> */}
       <Col
         className="main-content p-0"
         lg={{ size: 10, offset: 2 }}

@@ -25,7 +25,7 @@
 //             <Route path="/blog-overview" exact component={BlogOverview}/>
 //             <Route path="/user-profile" exact component={UserProfile}/>
 //           </Switch>
-          
+
 //         </Router>
 //       </>
 // }
@@ -38,7 +38,6 @@
 
 // export default  ConnectedApp;
 
-
 // // import React from "react";
 // // import { BrowserRouter as Router, Route } from "react-router-dom";
 // // import routes from "./routes";
@@ -49,8 +48,7 @@
 // // export default () => (
 // //   <Router>
 //     //   <Switch>
-        
-      
+
 //     //  <div>
 //     //    {routes.map((route, index) => {
 // //         return (
@@ -73,36 +71,34 @@
 // //   </Router>
 // // );
 
-
-
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import routes from "./routes";
 import withTracker from "./withTracker";
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./shards-dashboard/styles/shards-dashboards.1.1.0.min.css";
 
 export default () => (
-  <Router >
+  <Router>
     <div>
-      {routes.map((route, index) => {
-        return (
-          <Route
-            key={index}
-            path={route.path}
-            exact={route.exact}
-            component={withTracker(props => {
-              return (
-                <route.layout {...props}>
-                  <route.component {...props} />
-                </route.layout>
-              );
-            })}
-          />
-        );
-      })}
+      <Switch>
+        {routes.map((route, index) => {
+          return (
+            <Route
+              key={index}
+              path={route.path}
+              exact={route.exact}
+              component={withTracker(props => {
+                return (
+                  <route.layout {...props}>
+                    <route.component {...props} />
+                  </route.layout>
+                );
+              })}
+            />
+          );
+        })}
+      </Switch>
     </div>
   </Router>
 );

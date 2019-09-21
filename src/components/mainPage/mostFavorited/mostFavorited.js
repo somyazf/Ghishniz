@@ -10,13 +10,13 @@ import Grid from "@material-ui/core/Grid";
 import Rate from "../icons/rating";
 import EyeIcon from "../icons/eyeIcon";
 import FavoriteFood from "../icons/favorite";
-import DetailButtons from '../buttons/button.js';
-import Divider from '@material-ui/core/Divider';
-import sug1 from '../../../assets/sug1.jpg';
+import DetailButtons from "../buttons/button.js";
+import Divider from "@material-ui/core/Divider";
+import sug1 from "../../../assets/sug1.jpg";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   card: {
     maxWidth: 345
@@ -36,11 +36,11 @@ const useStyles = makeStyles(theme => ({
     transform: "rotate(180deg)"
   },
   divider: {
-    marginBottom: '33px',
-    height: '3px',
-    width: '13%',
-    margin: '10px auto',
-    backgroundColor: '#0ec145'
+    marginBottom: "33px",
+    height: "3px",
+    width: "13%",
+    margin: "10px auto",
+    backgroundColor: "#0ec145"
   }
 }));
 
@@ -74,7 +74,7 @@ export default function Suggestions() {
           <Typography variant="h4" align="center" gutterBottom>
             Most Favorited Recipes
           </Typography>
-          <Divider variant="middle" className={classes.divider}/>
+          <Divider variant="middle" className={classes.divider} />
           <Grid container justify="center" spacing={4}>
             {suggestions.map((value, i) => (
               <Grid key={i} item lg={4}>
@@ -98,10 +98,10 @@ export default function Suggestions() {
                     </Typography> */}
                   </CardContent>
                   <CardActions disableSpacing>
-                    <FavoriteFood/>
-                    <EyeIcon/>
-                    <Rate/>
-                    <DetailButtons/>  
+                    <FavoriteFood />
+                    <EyeIcon />
+                    <Rate index={`mf-${i}`} />
+                    <DetailButtons />
                   </CardActions>
                 </Card>
               </Grid>

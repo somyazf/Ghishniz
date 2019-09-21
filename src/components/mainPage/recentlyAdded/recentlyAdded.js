@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
@@ -11,12 +11,12 @@ import Rate from "../icons/rating";
 import EyeIcon from "../icons/eyeIcon";
 import UserIcon from "../icons/userIcon";
 import FavoriteFood from "../icons/favorite";
-import DetailButtons from '../buttons/button.js';
-import Divider from '@material-ui/core/Divider';
-import sug3 from '../../../assets/sug3.jpeg';
+import DetailButtons from "../buttons/button.js";
+import Divider from "@material-ui/core/Divider";
+import sug3 from "../../../assets/sug3.jpeg";
 
 const useStyles = makeStyles(theme => ({
-  root:{
+  root: {
     marginBottom: 45
   },
   card: {
@@ -37,11 +37,11 @@ const useStyles = makeStyles(theme => ({
     transform: "rotate(180deg)"
   },
   divider: {
-    marginBottom: '33px',
-    height: '3px',
-    width: '13%',
-    margin: '10px auto',
-    backgroundColor: '#0ec145'
+    marginBottom: "33px",
+    height: "3px",
+    width: "13%",
+    margin: "10px auto",
+    backgroundColor: "#0ec145"
   }
 }));
 
@@ -75,7 +75,7 @@ export default function Suggestions() {
           <Typography variant="h4" align="center" gutterBottom>
             Recently added
           </Typography>
-          <Divider variant="middle" className={classes.divider}/>
+          <Divider variant="middle" className={classes.divider} />
           <Grid container justify="center" spacing={4}>
             {suggestions.map((value, i) => (
               <Grid key={i} item lg={4}>
@@ -89,15 +89,16 @@ export default function Suggestions() {
                     title={value.created_at}
                     subheader={value.title}
                   />
-                  <CardContent>  
-                  <UserIcon/>by John Muler                 
+                  <CardContent>
+                    <UserIcon />
+                    by John Muler
                     <Rate index={i} />
                   </CardContent>
-                  <CardActions>
-                    <FavoriteFood/>
-                    <EyeIcon/>
-                   
-                    <DetailButtons/>  
+                  <CardActions disableSpacing>
+                    <FavoriteFood />
+                    <EyeIcon />
+
+                    <DetailButtons />
                   </CardActions>
                 </Card>
               </Grid>
