@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Routes } from "./_routes";
+import withTracker from "./withTracker";
 import { history } from './_helpers/history';
 import { connect } from "react-redux";
 import './App.css';
@@ -15,7 +16,13 @@ const App = ({user}) =>{
               key={index}
               path={route.path}
               exact={route.exact}
-              component={route.component}
+              component={withTracker(props => {
+                return (
+                  <route.layout {...props}>
+                    <route.component {...props} />
+                  </route.layout>
+                );
+              })}
             />
           );
         })}
