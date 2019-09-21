@@ -48,7 +48,7 @@ export default function Offer() {
         <>
           <div className={classes.root} className="offers">
             <Typography variant="h4" align="center" gutterBottom className={classes.typography}>
-                Ghishniz offers
+                Gishniz offers
             </Typography>
             <Divider variant="middle" className={classes.divider}/>
             <Grid container spacing={3} className={classes.root}>
@@ -60,7 +60,7 @@ export default function Offer() {
                         </Typography>
                         <Typography variant="body1" align="center" gutterBottom className={classes.typography}>
                             Discover a world of new
-                            cooking with Ghishniz.
+                            cooking with Gishniz.
                         </Typography>
                     </div>
                 </Grid>

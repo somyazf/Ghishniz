@@ -341,4 +341,5 @@ class BlogPosts extends React.Component {
   }
 }
 
-export default BlogPosts;
+withRouter(BlogPosts);
+export {BlogPosts};

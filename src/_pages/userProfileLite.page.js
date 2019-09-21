@@ -20,4 +20,5 @@ const UserProfileLite = () => (
   </Container>
 );
 
-export default UserProfileLite;
+withRouter(UserProfileLite);
+export {UserProfileLite};

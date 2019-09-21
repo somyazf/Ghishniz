@@ -28,4 +28,5 @@ const AddNewPost = () => (
   </Container>
 );
 
-export default AddNewPost;
+withRouter(AddNewPost);
+export {AddNewPost};

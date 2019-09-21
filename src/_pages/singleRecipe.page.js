@@ -1,21 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
 import InnerSidebar from "../components/innerPageSidebar/innerPageSidebar";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
-import Button from "@material-ui/core/Button";
 import Fab from "@material-ui/core/Fab";
 import Rate from "../components/mainPage/icons/rating";
 import EyeIcon from "../components/mainPage/icons/eyeIcon";
 import FavoriteFood from "../components/mainPage/icons/favorite";
 import Divider from '@material-ui/core/Divider';
-import sug1 from '../assets/sug1.jpg';
-import { Link } from "react-router-dom";
-import axios from 'axios';
+import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import { getRecipesInfoAction } from "../_actions";
 
-const SpoonacularApi = "94be430aadf644f6a8c8c95abbcce4c1";
-const baseUrl = "https://api.spoonacular.com";
-const imgUrl = "https://webknox.com/recipeImages/";
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
@@ -42,130 +39,137 @@ const useStyles = makeStyles(theme => ({
   },
   instButton: {
     backgroundColor:' #78b507',
+    color: '#fff',
+    marginRight: 30
   },
   infoSec: {
     padding: '40px 108px',
+  },
+  noBulletList: {
+    listStyle: 'none'
+  },
+  stepNumber: {
+    fontWeight: 600
+  },
+  stepText: {
+    paddingLeft: 21
   }
 }));
 
-const Recipe = (props) =>  {
-  const title = props.location.state.recipe;
-  const [data, setData] = useState([]);
-  const [url, setUrl] = useState(
-    `${baseUrl}/recipes/search?apiKey=${SpoonacularApi}&query=${title}`,
-);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
+const SingleRecipe = (props) =>  {
+  const id = props.location.state.id;
+  const {error, loading, items} = props;
+  const dispatch = useDispatch();
   useEffect(() => {
-      const fetchData = async () => {
-          setIsError(false);
-          setIsLoading(true);
-          try {
-          const api_call = await axios(url);
-          setData(api_call.data.results[0]);
-          } catch (error) {
-              setIsError(true);
-          }
-          setIsLoading(false);
-      };
-      fetchData();
-    }, [url]);
-
+    dispatch(getRecipesInfoAction.getRecipesInfo(id));
+  }, []);
+   
   const classes = useStyles();
-  const recipe = data;
-    return <>
-      <Grid container spacing={2}>
-        <Grid item xs>
-        <InnerSidebar/>
-        </Grid>
-        <Grid item xs={10} >
-          <Grid className={classes.root}>
-            <Grid item lg={6} className={classes.infoSec}>
-              <Typography variant="h4" component="h3" align="left" gutterBottom>
-                {recipe.title}
-              </Typography>
-              <Rate/>
-              <Grid className={classes.flexDivs}>
-                <Grid className="ingredients">
-                  <Typography variant="subtitle1" align="center" gutterBottom>
-                    7
-                  </Typography>
-                  <Typography variant="subtitle1" align="center" gutterBottom>
-                    Ingredients
-                  </Typography>
-                </Grid>
-                <Divider orientation="vertical"/>
-                <Grid className="time">
-                  <Typography variant="subtitle1" align="center" gutterBottom>
-                    40
-                  </Typography>
-                  <Typography variant="subtitle1" align="center" gutterBottom>
-                    Minutes
-                  </Typography>
-                </Grid>
-                <Divider orientation="vertical"/>
-                <Grid className="calories">
-                  <Typography variant="subtitle1" align="center" gutterBottom>
-                      ┅
-                  </Typography>
-                  <Typography variant="subtitle1" align="center" gutterBottom>
-                    Calories
-                  </Typography>
-                </Grid>
+  return <>
+    <Grid container spacing={2}>
+      <Grid item xs>
+      <InnerSidebar/>
+      </Grid>
+      <Grid item xs={10} >
+        <Grid className={classes.root}>
+          <Grid item lg={6} className={classes.infoSec}>
+            <Typography variant="h4" component="h3" align="left" gutterBottom>
+              {items.title}
+            </Typography>
+            <Rate/>
+            <Grid className={classes.flexDivs}>
+              <Grid className="ingredients">
+                <Typography variant="h6" align="center" gutterBottom>
+                  {items.servings}
+                </Typography>
+                <Typography variant="h6" align="center" gutterBottom>
+                  Servings
+                </Typography>
               </Grid>
-              <Grid className={classes.flexDivs}>
-                <div>
+              <hr style={{width: 1, height: 60, background: '#e2e2e2', border: 'none'}}/>
+              <Grid className="time">
+                <Typography variant="h6" align="center" gutterBottom>
+                {items.readyInMinutes}
+                </Typography>
+                <Typography variant="h6" align="center" gutterBottom>
+                  Minutes
+                </Typography>
+              </Grid>
+              <hr style={{width: 1, height: 60, background: '#e2e2e2', border: 'none'}}/>
+              <Grid className="calories">
+                <Typography variant="h6" align="center" gutterBottom>
+                  {items.healthScore}
+                </Typography>
+                <Typography variant="h6" align="center" gutterBottom>
+                  HealthScore
+                </Typography>
+              </Grid>
+            </Grid>
+            <Grid className={classes.flexDivs} style={{ marginTop: 43 }}>
+              <div>
                 <Fab variant="extended" href="#direction" className={classes.instButton}>
                   read instruction
                 </Fab>
-                </div>
-                <EyeIcon/>
-              </Grid>
-            </Grid>
-            <Grid item lg={6}>
-              <img src={sug1} alt="recipe img" className={classes.recipeImg}/>
+                <Favorite/>
+                <span style={{ paddingLeft: 10 }}>{items.aggregateLikes}</span>
+              </div>
             </Grid>
           </Grid>
-          <div>
-          <Divider/>
-          </div>
-          <Grid container className={classes.infoSec}>
-              <Grid>
-                <Typography variant="h3" gutterBottom>
-                  Ingredients
-                </Typography>
-                <Typography variant="subtitle1" gutterBottom>
-                  - 4 bone-in ribeye pork chops (rib, 3/4-inch thick)
-                  - 2 cloves garlic (peeled)
-                  - 1 cup fresh basil (packed)
-                  - 2 tablespoons lemon juice (fresh)
-                  - 2 tablespoons extra virgin olive oil
-                 -  1 teaspoon coarse salt
-                  - 1/2 teaspoon freshly ground black pepper
-                </Typography>
-              </Grid>
-              <Grid>
-                <Typography variant="h3" gutterBottom id= "direction">
-                  Directions
-                </Typography>
-                <Typography variant="subtitle" gutterBottom>
-                  With machine running, drop garlic through feed tube of food processor to mince. Stop, add fresh basil, and process until chopped. Add lemon juice, oil, salt, and pepper and process to make thin wet rub. Spread both sides of pork chops with basil mixture. Let stand 15 to 30 minutes.
-                  Prepare a medium-hot fire in grill. Brush the grate clean and oil the grate. Grill chops, over direct heat, turning once, to medium rare doneness, 5 to 6 minutes per side, or until the internal temperature reaches 145 degrees Fahrenheit, followed by a 3-minute rest time.
-                </Typography>
+          <Grid item lg={6}>
+            <img src={items.image} alt="recipe img" className={classes.recipeImg}/>
+          </Grid>
+        </Grid>
+        <div>
+        <Divider/>
+        </div>
+        <Grid container className={classes.infoSec}>
+            <Grid>
+              <Typography variant="h3" gutterBottom>
+                Ingredients
+              </Typography>
+              <Typography variant="subtitle1" gutterBottom>
+                <ul>
+                {items.extendedIngredients&&items.extendedIngredients.map(ingredient =>(
+                  <li key={ingredient.id}>
+                    {ingredient.original}
+                  </li>
+                ))}
+              </ul>
+              </Typography>
             </Grid>
             <Grid>
-                <Typography variant="h3" gutterBottom>
-                  Reviews(126)
-                </Typography>
-                <Typography variant="subtitle" gutterBottom>
-                Tim T. 5 days ago
-Definitely top with toasted pine nuts and shaved/grated Parmesan! Makes all the difference!!!
-                </Typography>
-            </Grid>
+              <Typography variant="h3" gutterBottom id= "direction">
+                Directions
+              </Typography>
+              <Typography variant="subtitle1" gutterBottom>
+              <ul>
+                {items.extendedIngredients&&items.analyzedInstructions[0].steps.map(step =>(
+                  <li key={step.number} className={classes.noBulletList}>
+                     <span className={classes.stepNumber}>STEP {step.number}</span><br/>
+                    <p className={classes.stepText}>{step.step}</p> 
+                  </li>
+                ))}
+              </ul>
+              </Typography>
+          </Grid>
+          <Grid>
+              <Typography variant="h3" gutterBottom>
+                Related
+              </Typography>
           </Grid>
         </Grid>
       </Grid>
-    </>
+    </Grid>
+  </>
 };
 
-export default Recipe;
+const mapStateToProps = state => {
+  const {loading} = state.getDataReducer;
+  const {items} = state.getDataReducer;
+  const {error} = state.getDataReducer;
+  
+  return { loading, items, error };
+};
+
+const ConnectedRecipesPage = withRouter(connect(mapStateToProps)(SingleRecipe));
+export {ConnectedRecipesPage as SingleRecipe};

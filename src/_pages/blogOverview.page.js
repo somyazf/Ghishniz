@@ -169,4 +169,5 @@ BlogOverview.defaultProps = {
   ]
 };
 
-export default BlogOverview;
+withRouter(BlogOverview);
+export {BlogOverview};

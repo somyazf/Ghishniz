@@ -12,15 +12,12 @@ import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
 import Paper from '@material-ui/core/Paper';
 import Grid from "@material-ui/core/Grid";
-import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import Rate from "../components/mainPage/icons/rating";
 import Button from "@material-ui/core/Button";
 import {connect} from "react-redux";
 import { getDataAction } from "../_actions";
-import { bindActionCreators } from 'redux';
-import {getRecipesError, getRecipes, getRecipesloading} from '../_reducers/getData.reducer';
 
 const imgUrl = "https://spoonacular.com/recipeImages/";
 
@@ -154,7 +151,10 @@ const Recipes = (props) => {
                                                     <Rate/>
                                                     <Button type="button" component={Link} to={{ 
                                                         pathname: `/recipe/${recipe.id}`,
-                                                        state: { recipe: recipe.title }
+                                                        state: { 
+                                                            recipe: recipe.title, 
+                                                            id: recipe.id
+                                                            }
                                                         }} 
                                                         variant="outlined" size="small">Detail</Button>  
                                                 </CardActions>

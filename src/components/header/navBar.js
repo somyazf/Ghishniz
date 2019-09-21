@@ -18,6 +18,9 @@ function NavBarMenu() {
         <li className="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-731">
           <Link to="/register">Register</Link>
         </li>
+        <li className="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-731">
+          <Link to="/login">Submit Recipe</Link>
+        </li>
       </ul>
     </nav>
   );

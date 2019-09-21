@@ -1,14 +1,13 @@
 import { getDataConstants } from "../_constants";
-import { getDataService } from "../_service";
+import { getRecipesInfoService } from "../_service";
 
-export const getDataAction = {
-    fetchRecipes
+export const getRecipesInfoAction = {
+    getRecipesInfo
 }
-
-function fetchRecipes(query) {
+function getRecipesInfo(id) {
     return dispatch => {
         dispatch(loading());
-        getDataService.fetchRecipes(query).then(
+        getRecipesInfoService.getRecipesInfo(id).then(
             response => {
                 dispatch(success(response));
             },
@@ -28,5 +27,4 @@ function fetchRecipes(query) {
         return { type: getDataConstants.FETCH_RECIPES_FAILED, error }; 
     }
 }
-
 
