@@ -10,7 +10,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import { authenticationAction } from "../_actions";
-import LogoPage from '../_components/header/logo';
+import LogoPage from '../components/header/logo';
 import { connect } from "react-redux";
 
 const useStyles = makeStyles(theme =>({
