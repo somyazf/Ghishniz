@@ -12,8 +12,8 @@ import {
   Button
 } from "shards-react";
 
-import { Link,withRouter } from "react-router-dom";
-import PageTitle from "../_components/common/PageTitle";
+import PageTitle from "../components/common/PageTitle";
+import { withRouter } from "react-router-dom";
 
 class BlogPosts extends React.Component {
   constructor(props) {

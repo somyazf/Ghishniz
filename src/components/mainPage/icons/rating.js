@@ -12,6 +12,7 @@ const SimpleRating = (props) => {
           name="simple-controlled"
           value={value}
           onChange={(event, newValue) => {
+            console.log(props.index)
             setValue(newValue);
           }}
         />

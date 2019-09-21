@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
@@ -9,15 +9,14 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Rate from "../icons/rating";
 import EyeIcon from "../icons/eyeIcon";
-import UserIcon from "../icons/userIcon";
 import FavoriteFood from "../icons/favorite";
-import DetailButtons from '../buttons/button.js';
-import Divider from '@material-ui/core/Divider';
-import sug3 from '../../../assets/sug3.jpeg';
+import DetailButtons from "../buttons/button.js";
+import Divider from "@material-ui/core/Divider";
+import sug1 from "../../../assets/sug1.jpg";
 
 const useStyles = makeStyles(theme => ({
-  root:{
-    marginBottom: 45
+  root: {
+    flexGrow: 1
   },
   card: {
     maxWidth: 345
@@ -37,66 +36,72 @@ const useStyles = makeStyles(theme => ({
     transform: "rotate(180deg)"
   },
   divider: {
-    marginBottom: '33px',
-    height: '3px',
-    width: '13%',
-    margin: '10px auto',
-    backgroundColor: '#0ec145'
+    marginBottom: "33px",
+    height: "3px",
+    width: "13%",
+    margin: "10px auto",
+    backgroundColor: "#0ec145"
   }
 }));
 
 export default function Suggestions() {
   const classes = useStyles();
-
   const suggestions = [
     {
-      title: "Asian Chicken Noodles",
+      title: "ghorme sabzi",
       created_at: "September 14, 2016",
       description:
         "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like."
     },
     {
-      title: "Italiano Salad Mixed",
-      created_at: "September 4, 2016",
+      title: "Itlian food",
+      created_at: "September 14, 2016",
       description:
         "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like."
     },
     {
-      title: "Paella",
-      created_at: "September 10, 2016",
+      title: "kashke bademjun",
+      created_at: "September 14, 2016",
       description:
         "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like."
     }
   ];
+
   return (
     <>
       <Grid container className={classes.root} spacing={2}>
         <Grid item xs={12}>
           <Typography variant="h4" align="center" gutterBottom>
-            Recently added
+            Most Favorited Recipes
           </Typography>
-          <Divider variant="middle" className={classes.divider}/>
+          <Divider variant="middle" className={classes.divider} />
           <Grid container justify="center" spacing={4}>
             {suggestions.map((value, i) => (
               <Grid key={i} item lg={4}>
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.media}
-                    image={sug3}
+                    image={sug1}
                     title="Paella dish"
                   />
                   <CardHeader
-                    title={value.created_at}
-                    subheader={value.title}
+                    subheader={value.created_at}
+                    title={value.title}
                   />
-                  <CardContent>  
-                  <UserIcon/>by John Muler                 
-                    <Rate index={i} />
+                  <CardContent>
+                    {/* <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      component="p"
+                    >
+                      {value.description}
+                    </Typography> */}
                   </CardContent>
-                  <CardActions>
-                    <FavoriteFood/>
-                    <EyeIcon/>
-                    <DetailButtons/>  
+                  <CardActions disableSpacing>
+                    <FavoriteFood />
+                    <EyeIcon />
+                    <Rate index={`mf-${i}`} />
+                    <DetailButtons />
                   </CardActions>
                 </Card>
               </Grid>

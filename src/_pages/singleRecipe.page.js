@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
-import InnerSidebar from "../_components/innerPageSidebar/innerPageSidebar";
+import InnerSidebar from "../components/innerPageSidebar/innerPageSidebar";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Fab from "@material-ui/core/Fab";
-import Rate from "../_components/mainPage/icons/rating";
-import {Favorite} from "../_components/mainPage/icons";
+import Rate from "../components/mainPage/icons/rating";
+import {Favorite} from "../components/mainPage/icons";
 import Divider from '@material-ui/core/Divider';
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
