@@ -1,3 +1,8 @@
+html {
+  background: #fff;
+  min-height: 100vh;
+}
+
 @import url('https://fonts.googleapis.com/css?family=Manjari&display=swap');
 *{
   box-sizing: border-box;
@@ -7,6 +12,7 @@ body{
   font-family: 'Manjari', sans-serif !important;
   background: rgb(249, 249, 249);
   font-size: 17px;
+  
 }
 h1, h2, h3, h4, h5, h6, p{
   font-family: 'Manjari', sans-serif !important;
@@ -181,11 +187,9 @@ header .search-form {
 /*Footer*/
 footer{
   text-align: center;
-  padding-top: 60px;
+  background: #fff;
 }
-.footer-bottom {
-  padding: 20px 0px;
-}
+
 .social{
   padding: 13px;
 }
@@ -196,7 +200,7 @@ footer{
   display: block;
   font-size: 13px;
   color: rgb(134, 134, 134);
-  padding: 10px;
+
 }
 
 /**/
@@ -436,6 +440,6 @@ input:-webkit-autofill {
 /* Login*/
 .loReBg{
   background: url('.\assets\login-register-bg.jpg') center/cover no-repeat;
-  height: 75vh;
+  min-height: 80vh;
   margin-top: 80px;
 }

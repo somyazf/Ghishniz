@@ -18,6 +18,7 @@ import Rate from "../components/mainPage/icons/rating";
 import Button from "@material-ui/core/Button";
 import {connect} from "react-redux";
 import { getDataAction } from "../_actions";
+import { Footer } from '../components/footer/footer';
 
 const imgUrl = "https://spoonacular.com/recipeImages/";
 
@@ -167,6 +168,7 @@ const Recipes = (props) => {
                 </Grid>
             </Grid>
         </Grid>
+        <Footer/>
     </>
 }
 const mapStateToProps = state => {
