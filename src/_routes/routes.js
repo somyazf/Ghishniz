@@ -1,11 +1,11 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
+import LoginPages from '../_pages/login_page';
 import { DefaultLayout } from "../layouts";
 import { 
   Home,
   Recipes, 
   SingleRecipe, 
-  LoginPage, 
   RegisterPage, 
   BlogPosts, 
   AddNewPost, 
@@ -30,7 +30,7 @@ const Routes = [
   },
   {
     path: "/login",
-    component: LoginPage
+    component: LoginPages
   },
   {
     path: "/register",
