@@ -5,23 +5,16 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import { Link,withRouter } from "react-router-dom";
+import {AUTHHOST} from '../_constants/other.constants';
+import Axios from 'axios';
 import Snackbar from '@material-ui/core/Snackbar';
-import CircularProgress from '@material-ui/core/CircularProgress';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
-import { authenticationAction } from "../_actions";
-import LogoPage from '../components/header/logo';
-import { connect } from "react-redux";
+import LogoPage from './header/logo';
 
 const useStyles = makeStyles(theme =>({
-    card: {
-        width: 350,
-    },
     textField: {
         width: '100%'
-    },
-    cardAction: {
-        justifyContent: 'flex-end'
     },
     formWrap: {
         width: 570,
@@ -48,13 +41,12 @@ const useStyles = makeStyles(theme =>({
     }
 }));
 
-const LoginPage = (props) => {
-
-    const {dispatch,loginRequest} = props;
+const RegisterPage = (props) => {
 
     const [values,setValues] = useState({
-        login: '',
-        password: ''
+        email: '',
+        password: '',
+        name: ''
     })
     const [responseMessage,setResponseMessage] = useState(null);
 
@@ -64,36 +56,59 @@ const LoginPage = (props) => {
         setValues({ ...values, [name]: value });
     };
 
-    const submitHandler = (event) =>{
+    const submitHandler = async (event) =>{
         event.preventDefault();
-        
-        dispatch(authenticationAction.login(values.login,values.password,props.history));
+        try{
+            const response = await Axios({
+                method: 'post',
+                url: `${AUTHHOST}/users/register`,
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                data: values
+            });
+            if (response.status === 200){
+                setResponseMessage("Your user successfully registered");
+                props.history.push('/login');
+            }
+        } catch (error){
+            setResponseMessage(error.response.data.message);
+        }
     }
 
     const handleClose = () =>{
         setResponseMessage(null);
     }
 
+
     return <>
-        <Grid container className="loReBg">
+        <Grid container className="loReBg" style={{height:'800px'}}>
             <Grid lg={6}>
                 <Grid className={classes.formWrap}>
-                    <Grid lg={6} className={classes.logoMargin}>
-                        <LogoPage/>
-                    </Grid>
                     <form onSubmit={submitHandler}>
-                        <Typography variant="h3" component="h1" color="textSecondary" gutterBottom>
-                            Login
+                        <Typography variant="h3" component="h1" color="textSecondary" gutterBottom >
+                            Register
                         </Typography>
+                        <TextField
+                            id="name"
+                            label="Full Name"
+                            name="name"
+                            className={classes.textField}
+                            value={values.name}
+                            onChange={handleChange}
+                            margin="normal"
+                            required
+                        />
                         <TextField
                             id="email"
                             label="Email"
-                            name="login"
+                            name="email"
                             className={classes.textField}
-                            value={values.login}
+                            value={values.email}
                             onChange={handleChange}
                             margin="normal"
                             type="email"
+                            required
                         />
                         <TextField
                             id="password"
@@ -104,12 +119,10 @@ const LoginPage = (props) => {
                             onChange={handleChange}
                             margin="normal"
                             type="password"
+                            required
                         />
-                        <Button type="submit" size="small" variant="contained"  className={classes.loginBtn}>{loginRequest ? 
-                            <CircularProgress size={20} classes = {{colorPrimary: classes.login}}/>
-                            : 'Login'}
-                        </Button>
-                        <Button type="button" component={Link} to="/register" variant="outlined" size="small" className={classes.button}>Register</Button>
+                        <Button type="submit" size="small" variant="contained"  className={classes.loginBtn}>Register</Button>
+                        <Button type="button" component={Link} to="/login" variant="outlined" size="small" className={classes.button}>Login</Button>
                     </form>
                     <Snackbar
                         anchorOrigin={{
@@ -136,18 +149,9 @@ const LoginPage = (props) => {
                     />
                 </Grid>
             </Grid>
-            <Grid lg = {6}>
-                
-            </Grid>
         </Grid>
     </>
 }
 
-const mapStateToProps = state => {
-    const {loginRequest} = state.authentication;
-    
-    return { loginRequest };
-};
-
-const ConnectedLoginPage = withRouter(connect(mapStateToProps)(LoginPage));
-export {ConnectedLoginPage as LoginPage};
+withRouter(RegisterPage);
+export {RegisterPage};

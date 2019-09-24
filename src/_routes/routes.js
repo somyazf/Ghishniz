@@ -1,11 +1,11 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
+import LoginPages from '../_pages/login_page';
 import { DefaultLayout } from "../layouts";
 import { 
   Home,
   Recipes, 
   SingleRecipe, 
-  LoginPage, 
   RegisterPage, 
   BlogPosts, 
   AddNewPost, 
@@ -13,6 +13,7 @@ import {
   BlogOverview
 } 
 from "../_pages";
+import UserDashboard from "../_pages/userDashboard/dashboard";
 
 const Routes = [
   {
@@ -30,12 +31,18 @@ const Routes = [
   },
   {
     path: "/login",
-    component: LoginPage
+    component: LoginPages
   },
   {
     path: "/register",
     component: RegisterPage
   },
+
+  {
+    path: "/dashboard",
+    component: UserDashboard
+  },
+
   {
     path: "/blog-overview",
     layout: DefaultLayout,

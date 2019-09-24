@@ -42,11 +42,11 @@ const useStyles = makeStyles(theme => ({
  const Footer = ()=>{
     const classes = useStyles();
     return <footer>
-        <div className="site-branding">
+        {/* <div className="site-branding">
             <div className="site-name">
                 <a href="http://ghishniz.ir" rel="home"><img src={Logo} alt="logo"/></a>
             </div>						
-        </div>    
+        </div>     */}
         <div className="social">
             <Grid container spacing={3} className={classes.root}>
               <FontAwesomeIcon icon={faGithubAlt} size="lg" className={classes.iconHover}/>
