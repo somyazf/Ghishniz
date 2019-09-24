@@ -8,6 +8,10 @@ import './App.css';
 import { Home, Recipes, SingleRecipe, AddNewPost, BlogOverview, UserProfileLite } from './_pages';
 import LoginPages from './_pages/login_page';
 import RegisterPages from './_pages/register_page';
+import UserDashboard from './_pages/userDashboard/dashboard';
+import { DefaultLayout } from './layouts';
+
+
 
 
 const App = ({user}) =>{
@@ -21,7 +25,7 @@ const App = ({user}) =>{
             <Route path="/register" exact component={RegisterPages}/>
             <Route path="/addnewpost" exact component={AddNewPost}/>
             <Route path="/blog-overview" exact component={BlogOverview}/>
-            <Route path="/user-profile" exact component={UserProfileLite}/>
+            <Route path="/dashboard" exact render={ ()=> <UserDashboard  component={BlogOverview} />}/>
           </Switch>
 
         </Router>

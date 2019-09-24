@@ -10,7 +10,7 @@ const DefaultLayout = ({ children, noNavbar, noFooter }) => (
   <Container fluid>
     <Row>
       {/* change this */}
-      {/* <MainSidebar /> */}
+      <MainSidebar />
       <Col
         className="main-content p-0"
         lg={{ size: 10, offset: 2 }}

@@ -13,6 +13,7 @@ import {
   BlogOverview
 } 
 from "../_pages";
+import UserDashboard from "../_pages/userDashboard/dashboard";
 
 const Routes = [
   {
@@ -36,6 +37,12 @@ const Routes = [
     path: "/register",
     component: RegisterPage
   },
+
+  {
+    path: "/dashboard",
+    component: UserDashboard
+  },
+
   {
     path: "/blog-overview",
     layout: DefaultLayout,
