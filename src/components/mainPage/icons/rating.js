@@ -9,7 +9,7 @@ const SimpleRating = (props) => {
     <div>
       <Box component="fieldset" mb={3} borderColor="transparent">
         <Rating
-          name="simple-controlled"
+          name={props.index}
           value={value}
           onChange={(event, newValue) => {
             console.log(props.index)
