@@ -16,6 +16,9 @@ body{
 h1, h2, h3, h4, h5, h6, p{
   font-family: 'Manjari', sans-serif !important;
 }
+h3 {
+  font-size: 1.7rem;
+}
 a{
   text-decoration: none !important;
   color: #665555;
@@ -84,7 +87,7 @@ header .main-navigation .current_page_item > a, header .main-navigation .current
 
 /*Banner*/
 .banner{
-  background: url(.\assets\banner-img.jpg) center;
+  background: url(assets\images\site\banner-img.jpg) center;
   height: 16vw;
   display: flex;
   justify-content: center;
@@ -138,6 +141,7 @@ footer{
 .mostVisitedSec{
   background: #fff;
   padding: 15px;
+  margin-bottom: 70px;
 }
 .sidePostTitle{
   padding-top: 18px;
@@ -146,7 +150,7 @@ footer{
 
 /*offer sec*/
 .offers{
-  background: url('.\assets\section1-bg.png') fixed center/cover no-repeat;
+  background: url('assets\images\site\section1-bg.png') fixed center/cover no-repeat;
   padding-top: 40px;
 }
 .jss132{
@@ -198,7 +202,7 @@ footer{
 
 /* Login*/
 .loReBg{
-  background: url('.\assets\login-register-bg.jpg') center/cover no-repeat;
+  background: url('assets\images\site\login-register-bg.jpg') center/cover no-repeat;
   min-height: 80vh;
   margin-top: 80px;
 }
