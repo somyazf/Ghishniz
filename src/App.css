@@ -1,9 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Manjari&display=swap');
+
 html {
   background: #fff;
   min-height: 100vh;
 }
-
-@import url('https://fonts.googleapis.com/css?family=Manjari&display=swap');
 *{
   box-sizing: border-box;
 }
@@ -12,7 +12,6 @@ body{
   font-family: 'Manjari', sans-serif !important;
   background: rgb(249, 249, 249);
   font-size: 17px;
-  
 }
 h1, h2, h3, h4, h5, h6, p{
   font-family: 'Manjari', sans-serif !important;
@@ -30,6 +29,7 @@ a:hover {
   padding-right: 0 !important; 
   padding-left: 0 !important;
 }
+
 /*Menu*/
 header {
   position: sticky;
@@ -42,7 +42,6 @@ header {
   background: #fff;
   box-shadow: .0px 1px 8px 0px darkgrey
 }
-
 .site-header-container {
   display: block;
   margin: 8px auto;
@@ -62,7 +61,6 @@ header .main-navigation {
   width: 80%;
   line-height: 10px;
 }
-
 header .main-navigation li {
   display: inline-block;
   margin: 0 15px 0 15px;
@@ -86,7 +84,7 @@ header .main-navigation .current_page_item > a, header .main-navigation .current
 
 /*Banner*/
 .banner{
-  background: url(/static/media/banner-img.aa355436.jpg) center;
+  background: url(.\assets\banner-img.jpg) center;
   height: 16vw;
   display: flex;
   justify-content: center;
@@ -98,10 +96,14 @@ header .main-navigation .current_page_item > a, header .main-navigation .current
 footer{
   text-align: center;
   background: #fff;
+  margin-top: 60px;
+  box-shadow: 0 -4px 20px 0px #cacaca29;
 }
-
 .social{
-  padding: 13px;
+  padding: 20px;
+}
+.footer-bottom{
+  padding: 20px 0;
 }
 .top-divider {
   border-top: 1px solid rgb(229, 229, 227);
