@@ -16,8 +16,11 @@ body{
 h1, h2, h3, h4, h5, h6, p{
   font-family: 'Manjari', sans-serif !important;
 }
+h3{
+  color: #4a4a4a !important;
+}
 h3 {
-  font-size: 1.7rem;
+  font-size: 1.7rem !important;
 }
 a{
   text-decoration: none !important;
@@ -82,7 +85,12 @@ header .main-navigation .current_page_item > a, header .main-navigation .current
   height: 60px;
 }
 .site-name img{
-    height: 100%;
+  height: 100%;
+}
+.carousel-caption {
+  color: #1d1d1d;
+  background: #ffffffdb;
+  bottom: 0px !important;
 }
 
 /*Banner*/
@@ -95,30 +103,7 @@ header .main-navigation .current_page_item > a, header .main-navigation .current
   background-repeat: no-repeat;
 }
 
-/*Footer*/
-footer{
-  text-align: center;
-  background: #fff;
-  margin-top: 60px;
-  box-shadow: 0 -4px 20px 0px #cacaca29;
-}
-.social{
-  padding: 20px;
-}
-.footer-bottom{
-  padding: 20px 0;
-}
-.top-divider {
-  border-top: 1px solid rgb(229, 229, 227);
-}
-.copyright {
-  display: block;
-  font-size: 13px;
-  color: rgb(134, 134, 134);
-
-}
-
-/*sidebar*/
+/*homepage sidebar*/
 .sidebar{
   padding-top: 24px;
 }
@@ -147,6 +132,19 @@ footer{
   padding-top: 18px;
   text-align: justify;
 }
+.suggestionSec{
+  background: #fff;
+  padding: 30px 0 0 0;
+}
+.suggestionSec h3{
+  padding: 0 30px;
+}
+.suggestionSec p{
+  color: #d00606;
+}
+.carousel-indicators li {
+  background-color: rgba(165, 161, 161, 0.58);
+}
 
 /*offer sec*/
 .offers{
@@ -158,6 +156,28 @@ footer{
   padding: 50px 0;
   align-items: center;
   flex-direction: column;
+}
+
+/*Footer*/
+footer{
+  text-align: center;
+  background: #fff;
+  margin-top: 60px;
+  box-shadow: 0 -4px 20px 0px #cacaca29;
+}
+.social{
+  padding: 20px;
+}
+.footer-bottom{
+  padding: 20px 0;
+}
+.top-divider {
+  border-top: 1px solid rgb(229, 229, 227);
+}
+.copyright {
+  display: block;
+  font-size: 13px;
+  color: rgb(134, 134, 134);
 }
 
 /*innersidebar*/
