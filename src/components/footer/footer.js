@@ -1,7 +1,6 @@
 import React from 'react';
 import { withRouter } from "react-router-dom";
 import '../../App.css';
-import Logo from "../../assets/ghishniz-logo.png"
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import { yellow } from '@material-ui/core/colors';
@@ -42,11 +41,6 @@ const useStyles = makeStyles(theme => ({
  const Footer = ()=>{
     const classes = useStyles();
     return <footer>
-        {/* <div className="site-branding">
-            <div className="site-name">
-                <a href="http://ghishniz.ir" rel="home"><img src={Logo} alt="logo"/></a>
-            </div>						
-        </div>     */}
         <div className="social">
             <Grid container spacing={3} className={classes.root}>
               <FontAwesomeIcon icon={faGithubAlt} size="lg" className={classes.iconHover}/>
@@ -56,7 +50,7 @@ const useStyles = makeStyles(theme => ({
         </div>
         <div className="footer-bottom top-divider">
             <div className="container">
-                <span className="copyright">© 2019 GHISHNIZ</span>
+                <span className="copyright">© 2019 GISHNIZ, made by ♥</span>
             </div>
         </div>
     </footer>
