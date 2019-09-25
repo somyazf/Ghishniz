@@ -3,9 +3,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Divider from '@material-ui/core/Divider';
 import Grid from "@material-ui/core/Grid";
-import Explore from '../../../assets/explore.svg';
-import Submit from '../../../assets/create.svg';
-import Create from '../../../assets/eat.svg';
+import Explore from 'assets/images/site/explore.svg';
+import Submit from 'assets/images/site/create.svg';
+import Create from 'assets/images/site/eat.svg';
 
 const useStyles = makeStyles(theme => ({
     root: {

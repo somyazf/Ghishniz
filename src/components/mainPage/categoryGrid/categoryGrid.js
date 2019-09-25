@@ -2,10 +2,10 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
-import Breakfast from '../../../assets/breakfast.jpg';
-import Lunch from '../../../assets/lunch.jpg';
-import Dinner from '../../../assets/dinner.jpg';
-import Dessert from '../../../assets/dessert.jpg';
+import Breakfast from 'assets/images/site/breakfast.jpg';
+import Lunch from 'assets/images/site/lunch.jpg';
+import Dinner from 'assets/images/site/dinner.jpg';
+import Dessert from 'assets/images/site/dessert.jpg';
 
 
 const images = [

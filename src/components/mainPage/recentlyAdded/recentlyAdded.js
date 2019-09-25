@@ -13,7 +13,7 @@ import UserIcon from "../icons/userIcon";
 import FavoriteFood from "../icons/favorite";
 import DetailButtons from "../buttons/button.js";
 import Divider from "@material-ui/core/Divider";
-import sug3 from "../../../assets/sug3.jpeg";
+import sug3 from "assets/images/site/sug3.jpeg";
 
 const useStyles = makeStyles(theme => ({
   root: {

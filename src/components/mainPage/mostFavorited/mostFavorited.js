@@ -10,9 +10,9 @@ import Grid from "@material-ui/core/Grid";
 import Rate from "../icons/rating";
 import EyeIcon from "../icons/eyeIcon";
 import FavoriteFood from "../icons/favorite";
-import DetailButtons from "../buttons/button.js";
+import DetailButtons from "../buttons/button";
 import Divider from "@material-ui/core/Divider";
-import sug1 from "../../../assets/sug1.jpg";
+import sug1 from "assets/images/site/sug1.jpg";
 
 const useStyles = makeStyles(theme => ({
   root: {
