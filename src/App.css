@@ -15,8 +15,6 @@ body{
 }
 h1, h2, h3, h4, h5, h6, p{
   font-family: 'Manjari', sans-serif !important;
-}
-h3{
   color: #4a4a4a !important;
 }
 h3 {
@@ -62,23 +60,20 @@ header {
   align-items: center;
 
 }
-header .main-navigation {
+.main-navigation {
   text-align: right;
   width: 80%;
   line-height: 10px;
 }
-header .main-navigation li {
+.main-navigation li {
   display: inline-block;
   margin: 0 15px 0 15px;
   position: relative;
 }
-.main-navigation > li > a{
-  color: #424344 !important;
+.main-navigation  li > a{
+  color: #616161;
 }
-.site-header .main-navigation ul li.menu-item-has-children, header .main-navigation ul li.page_item_has_children {
-  padding-right: 15px;
-}
-header .main-navigation .current_page_item > a, header .main-navigation .current-menu-item > a, header .main-navigation .current_page_ancestor > a, header .main-navigation .current-menu-ancestor > a, header .main-navigation li:hover > a, header .main-navigation li.focus > a {
+.main-navigation li:hover > a{
   color: #f86b2e;
 }
 .site-name{
@@ -140,7 +135,7 @@ header .main-navigation .current_page_item > a, header .main-navigation .current
   padding: 0 30px;
 }
 .suggestionSec p{
-  color: #d00606;
+  color: #d00606 !important;
 }
 .carousel-indicators li {
   background-color: rgba(165, 161, 161, 0.58);
@@ -149,7 +144,7 @@ header .main-navigation .current_page_item > a, header .main-navigation .current
 /*offer sec*/
 .offers{
   background: url('assets\images\site\section1-bg.png') fixed center/cover no-repeat;
-  padding-top: 40px;
+  padding: 40px 40px 0 40px;
 }
 .jss132{
   display: flex;
@@ -158,11 +153,15 @@ header .main-navigation .current_page_item > a, header .main-navigation .current
   flex-direction: column;
 }
 
+
+.carousel-multi-item .carousel-item {
+  display: flex !important;
+  justify-content: space-between !important;
+}
 /*Footer*/
 footer{
   text-align: center;
   background: #fff;
-  margin-top: 60px;
   box-shadow: 0 -4px 20px 0px #cacaca29;
 }
 .social{
@@ -182,7 +181,7 @@ footer{
 
 /*innersidebar*/
 .sidebarMainNavigation {
-  position: fixed;
+  position: fixed !important;
   top: 0;
   left: 0;
   height: 100vh;
@@ -223,6 +222,5 @@ footer{
 /* Login*/
 .loReBg{
   background: url('assets\images\site\login-register-bg.jpg') center/cover no-repeat;
-  min-height: 80vh;
-  margin-top: 80px;
+  min-height: 71vh;
 }
