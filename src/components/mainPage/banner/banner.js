@@ -1,7 +1,7 @@
 import React from 'react';
-import '../../../App.css';
+import 'App.css';
 import { Col, Row, Container} from 'react-bootstrap';
-import MainPageSearch from '../mainPageSearch/searchMainPage';
+import {MainPageSearch} from 'components/mainPage/mainPageSearch/searchMainPage';
 
 export default function Banner() {
   return (
