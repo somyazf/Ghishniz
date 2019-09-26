@@ -5,45 +5,29 @@ import { makeStyles } from "@material-ui/core/styles";
 import ToggleButton from '@material-ui/lab/ToggleButton';
 
 
-// const useStyles = makeStyles(theme => ({ 
-//     root: {
-//       color: theme.palette.text.primary,
-//     },
-//     icon: {
-//       fontSize: 24,
-//     },
-// }));
-// export default function EyeIcon() {
-//     const classes = useStyles();
-//     return (
-//         <IconButton>
-//             <VisibilityIcon className={classes.icon} />
-//         </IconButton>
-//     )
-// }
-
-
 const useStyles = makeStyles(theme => ({
-  padding:{
-    justifyContent:'space-around'
-  },
-})
-)
+  root: {
+    backgroundColor: 'transparent !important',
+    borderRadius: '50%',
+    margin: '0 10px',
+    outline: 'none !important'
+  }
+}));
 
 
 export default function StandaloneToggleButton() {
   const [selected, setSelected] = React.useState(false);
   const classes = useStyles();
   return (
-      
     <ToggleButton
       value="!check"
       selected={!selected}
       onChange={() => {
         setSelected(!selected);
       }}
+      className={classes.root}
     >
-      <VisibilityIcon className={classes.padding} />
+      <VisibilityIcon/>
     </ToggleButton>
   );
 }
