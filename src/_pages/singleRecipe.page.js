@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
-import InnerSidebar from "../components/innerPageSidebar/innerPageSidebar";
+import InnerSidebar from "components/innerPageSidebar/innerPageSidebar";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Fab from "@material-ui/core/Fab";
-import Rate from "../components/mainPage/icons/rating";
-import {Favorite} from "../components/mainPage/icons";
+import Rate from "components/mainPage/icons/rating";
+import {Favorite} from "components/mainPage/icons";
 import Divider from '@material-ui/core/Divider';
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { getRecipesInfoAction } from "../_actions";
+import { getRecipesInfoAction } from "_actions";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -67,7 +67,7 @@ const SingleRecipe = (props) =>  {
   return <>
     <Grid container spacing={2}>
       <Grid item xs>
-      <InnerSidebar/>
+        <InnerSidebar/>
       </Grid>
       <Grid item xs={10} >
         <Grid className={classes.root}>
