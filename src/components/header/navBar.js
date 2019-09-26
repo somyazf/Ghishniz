@@ -1,29 +1,61 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "../../App.css";
+import { withRouter } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import "App.css";
 
 function NavBarMenu() {
   return (
     <nav className="main-navigation">
       <ul id="primary-menu" className="menu">
-        <li className="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-703">
-          <Link to="/">Home</Link>
+        <li className="menu-item"> 
+          <NavLink
+            to="/"
+            activeClassName="active"
+            exact 
+            activeStyle={{
+              color: "#f86b2e"
+            }}
+          >
+            Home
+          </NavLink>
         </li>
-        <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-713">
-          <Link to="/recipes">Recipes</Link>
+        <li className="menu-item">
+          <NavLink
+            to="/recipes"
+          >
+            Recipes
+          </NavLink>
         </li>
-        <li className="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-730">
-          <Link to="/login">Login</Link>
+        <li className="menu-item">
+          <NavLink
+            to="/login"
+            activeClassName="active"
+            activeStyle={{ color: '#f86b2e' }}
+          >
+            Login
+          </NavLink>
         </li>
-        <li className="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-731">
-          <Link to="/register">Register</Link>
+        <li className="menu-item">
+          <NavLink
+            to="/register"
+            activeClassName="active"
+            activeStyle={{ color: '#f86b2e' }}
+          >
+            Register
+          </NavLink>
         </li>
-        <li className="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-731">
-          <Link to="/login">Submit Recipe</Link>
+        <li className="menu-item">
+          <NavLink
+            to="/login"
+            activeClassName="active"
+          >
+            Submit Recipe
+          </NavLink>
         </li>
       </ul>
     </nav>
   );
 }
 
+withRouter(NavBarMenu);
 export default NavBarMenu;
