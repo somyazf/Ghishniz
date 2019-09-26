@@ -17,6 +17,9 @@ h1, h2, h3, h4, h5, h6, p{
   font-family: 'Manjari', sans-serif !important;
   color: #4a4a4a !important;
 }
+span{
+  font-family: 'Manjari', sans-serif !important;
+}
 h3 {
   font-size: 1.7rem !important;
 }
@@ -196,6 +199,7 @@ footer{
   align-items: center;
   color: #232323;
   line-height: 2rem;
+  box-shadow: -1px 0px 5px 0px rgba(192, 192, 192, 0.5019607843137255);
 }
 .sidebarMainNavigation a {
   color: #565252;
@@ -223,4 +227,8 @@ footer{
 .loReBg{
   background: url('assets\images\site\login-register-bg.jpg') center/cover no-repeat;
   min-height: 71vh;
+}
+
+.makeStyles-cardHeader-14 span{
+  font-size: 1.18rem;
 }
