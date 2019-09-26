@@ -28,6 +28,8 @@ const useStyles = makeStyles(theme => ({
   },
   button: {
     backgroundColor:' #78b507',
+    color: '#fff !important',
+    fontSize: 16
   }
 }));
 
@@ -42,13 +44,13 @@ export default function InnerSidebar() {
                 <LogoPage/>
                 <hr/>
               </div>
-              <Fab variant="extended" href="#" className={classes.button}>
+              <Fab variant="extended" component={Link} to={{pathname: `/login`}} className={classes.button}>
                 Signup / Login
               </Fab>
               <div className="menuNav">
                 <Nav className="flex-column">
-                    <Link to="/home">Home</Link>
-                    <Link to="/submitrecipe">Submit Recipe</Link>
+                    <Link to="/">Home</Link>
+                    <Link to="/login">Submit Recipe</Link>
                     <Link to="/recipes">Recipes</Link>
                 </Nav>
               </div>
