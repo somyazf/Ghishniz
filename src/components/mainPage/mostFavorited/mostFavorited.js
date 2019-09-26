@@ -12,28 +12,29 @@ import EyeIcon from "../icons/eyeIcon";
 import FavoriteFood from "../icons/favorite";
 import DetailButtons from "../buttons/button";
 import Divider from "@material-ui/core/Divider";
-import sug1 from "assets/images/site/sug1.jpg";
+import springCassoulet from "assets/images/site/Spring-Cassoulet.jpg";
+import easyMeatball from "assets/images/site/Easy-meatball-subs.jpg";
+import falafelWaffles from "assets/images/site/Falafel-waffles.jpg";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
+    marginBottom: 40
   },
   card: {
-    maxWidth: 345
+    maxWidth: 345,
+    textAlign: 'center'
+  },
+  cardAction: {
+    display: 'flex',
+    justifyContent: 'space-between'
+  },
+  cardHeader: {
+    padding: '9px 16px 0 16px'
   },
   media: {
     height: 0,
-    paddingTop: "56.25%" // 16:9
-  },
-  expand: {
-    transform: "rotate(0deg)",
-    marginLeft: "auto",
-    transition: theme.transitions.create("transform", {
-      duration: theme.transitions.duration.shortest
-    })
-  },
-  expandOpen: {
-    transform: "rotate(180deg)"
+    paddingTop: "56.25%"
   },
   divider: {
     marginBottom: "33px",
@@ -41,29 +42,42 @@ const useStyles = makeStyles(theme => ({
     width: "13%",
     margin: "10px auto",
     backgroundColor: "#0ec145"
+  },
+  metaBox: {
+    display: "flex", 
+    justifyContent: "space-evenly", 
+    padding: "10px 0", 
+    background:" #ffbb00"
   }
 }));
 
 export default function Suggestions() {
   const classes = useStyles();
-  const suggestions = [
+  const mostFavorited = [
     {
-      title: "ghorme sabzi",
-      created_at: "September 14, 2016",
+      title: "Spring Cassoulet with Pistou",
       description:
-        "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like."
+        "Blanch broad beans in boiling salted water for 1 minute, then plunge into iced water and ...",
+      image: springCassoulet ,
+      serving: "4 Servings",
+      readyInMin: "90 Min",
     },
     {
-      title: "Itlian food",
-      created_at: "September 14, 2016",
+      title: "Easy meatball subs",
       description:
-        "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like."
+        "Heat a large non-stick frying pan over high heat. Add the meatballs and cook ...",
+      image: easyMeatball,
+      serving: "4 Servings",
+      readyInMin: "15 Min" ,
+
     },
     {
-      title: "kashke bademjun",
-      created_at: "September 14, 2016",
+      title: "Falafel waffles",
       description:
-        "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like."
+        "Place chickpeas, flour, baking powder, parsley, garlic, ground coriander and ...",
+      image: falafelWaffles,
+      serving: "3 Servings",
+      readyInMin: "30 Min",
     }
   ];
 
@@ -76,32 +90,31 @@ export default function Suggestions() {
           </Typography>
           <Divider variant="middle" className={classes.divider} />
           <Grid container justify="center" spacing={4}>
-            {suggestions.map((value, i) => (
+            {mostFavorited.map((value, i) => (
               <Grid key={i} item lg={4}>
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.media}
-                    image={sug1}
-                    title="Paella dish"
+                    image={value.image}
+                    alt={value.title}
                   />
+                  <div className={classes.metaBox}>
+                    <span>{value.serving}</span> <span>{value.readyInMin}</span>
+                  </div>
                   <CardHeader
-                    subheader={value.created_at}
                     title={value.title}
+                    className={classes.cardHeader}
                   />
+                  {/* <Rate index={`mf-${i}`}/> */}
                   <CardContent>
-                    {/* <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      component="p"
-                    >
-                      {value.description}
-                    </Typography> */}
+                    {value.description}
                   </CardContent>
-                  <CardActions disableSpacing>
-                    <FavoriteFood />
-                    <EyeIcon />
-                    <Rate index={`mf-${i}`} />
-                    <DetailButtons />
+                  <CardActions disableSpacing className={classes.cardAction}>
+                    <div>
+                      <FavoriteFood/><span>1000</span>
+                      <EyeIcon/><span>100</span>
+                    </div>
+                    <DetailButtons/>
                   </CardActions>
                 </Card>
               </Grid>
