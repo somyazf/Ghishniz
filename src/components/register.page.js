@@ -1,16 +1,15 @@
-import React,{useState} from 'react';
+import React,{ useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from "@material-ui/core/Grid";
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import { Link,withRouter } from "react-router-dom";
-import {AUTHHOST} from '../_constants/other.constants';
+import { AUTHHOST } from '_constants/other.constants';
 import Axios from 'axios';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
-import LogoPage from './header/logo';
 
 const useStyles = makeStyles(theme =>({
     textField: {
@@ -80,9 +79,8 @@ const RegisterPage = (props) => {
         setResponseMessage(null);
     }
 
-
     return <>
-        <Grid container className="loReBg" style={{height:'800px'}}>
+        <Grid container className="loReBg">
             <Grid lg={6}>
                 <Grid className={classes.formWrap}>
                     <form onSubmit={submitHandler}>
