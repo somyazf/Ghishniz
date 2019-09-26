@@ -23,15 +23,15 @@ const useStyles = makeStyles(theme => ({
       transform: "rotate(0deg)",
       marginLeft: "auto",
       transition: theme.transitions.create("transform", {
-        duration: theme.transitions.duration.shortest
+      duration: theme.transitions.duration.shortest
       })
     },
     expandOpen: {
       transform: "rotate(180deg)"
     },
     typography: {
-        color: "#fff",
-        paddingTop: '13px',
+      color: "#fff !important",
+      paddingTop: '13px',
     },
     divider: {
       marginBottom: '33px',
@@ -83,7 +83,7 @@ export default function Offer() {
                             Submit
                         </Typography>
                         <Typography variant="body1" align="center" gutterBottom className={classes.typography}>
-                            Submit your recipe
+                            Submit your own recipes
                         </Typography>
                     </div>
                 </Grid>
