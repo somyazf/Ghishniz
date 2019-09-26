@@ -6,7 +6,11 @@ import { red } from '@material-ui/core/colors';
 
 const useStyles = makeStyles(theme => ({
     root:{
-      color: 'red'
+      color: 'red',
+      backgroundColor: 'transparent !important',
+      borderRadius: '50%',
+      margin: '0 8px',
+      outline: 'none !important'
     },
     iconHover: {
       '&:hover': {
