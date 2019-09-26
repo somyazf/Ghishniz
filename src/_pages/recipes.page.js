@@ -94,7 +94,7 @@ const Recipes = (props) => {
 
     return <>
         <Grid container>
-            <Grid item xs>
+            <Grid item>
                 <InnerSidebar/>
             </Grid>
             <Grid item xs={10} >
