@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
@@ -13,28 +13,28 @@ import UserIcon from "../icons/userIcon";
 import FavoriteFood from "../icons/favorite";
 import DetailButtons from "../buttons/button.js";
 import Divider from "@material-ui/core/Divider";
-import sug3 from "assets/images/site/sug3.jpeg";
+import AsianChickenNoodles from "assets/images/site/Asian-Chicken-Noodles.jpg";
+import ItalianoSaladMixed from "assets/images/site/Italiano-Salad-Mixed.jpg";
+import PeaAndHalloumi  from "assets/images/site/Pea-And-Halloumi.jpg";
 
 const useStyles = makeStyles(theme => ({
   root: {
     marginBottom: 45
   },
   card: {
-    maxWidth: 345
+    maxWidth: 345,
+    textAlign: 'center'
+  },
+  cardAction: {
+    display: 'flex',
+    justifyContent: 'space-between'
+  },
+  cardHeader: {
+    padding: '25px 16px 0 16px'
   },
   media: {
     height: 0,
-    paddingTop: "56.25%" // 16:9
-  },
-  expand: {
-    transform: "rotate(0deg)",
-    marginLeft: "auto",
-    transition: theme.transitions.create("transform", {
-      duration: theme.transitions.duration.shortest
-    })
-  },
-  expandOpen: {
-    transform: "rotate(180deg)"
+    paddingTop: "56.25%"
   },
   divider: {
     marginBottom: "33px",
@@ -42,30 +42,33 @@ const useStyles = makeStyles(theme => ({
     width: "13%",
     margin: "10px auto",
     backgroundColor: "#0ec145"
-  }
+  },
 }));
 
 export default function Suggestions() {
   const classes = useStyles();
 
-  const suggestions = [
+  const recentlyAdded = [
     {
       title: "Asian Chicken Noodles",
-      created_at: "September 14, 2016",
+      created_at: "September 14, 2019",
       description:
-        "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like."
+        "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.",
+      image: AsianChickenNoodles
     },
     {
       title: "Italiano Salad Mixed",
-      created_at: "September 4, 2016",
+      created_at: "September 4, 2019",
       description:
-        "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like."
+        "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.",
+      image: ItalianoSaladMixed
     },
     {
-      title: "Paella",
-      created_at: "September 10, 2016",
+      title: "Pea And Halloumi Fritters",
+      created_at: "September 10, 2019",
       description:
-        "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like."
+        "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.",
+      image: PeaAndHalloumi
     }
   ];
   return (
@@ -77,28 +80,29 @@ export default function Suggestions() {
           </Typography>
           <Divider variant="middle" className={classes.divider} />
           <Grid container justify="center" spacing={4}>
-            {suggestions.map((value, i) => (
+            {recentlyAdded.map((value, i) => (
               <Grid key={i} item lg={4}>
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.media}
-                    image={sug3}
-                    title="Paella dish"
+                    image={value.image}
+                    alt={value.title}
                   />
                   <CardHeader
-                    title={value.created_at}
-                    subheader={value.title}
+                    title={value.title}
+                    subheader={value.created_at}
+                    className={classes.cardHeader}
                   />
                   <CardContent>
-                    <UserIcon />
-                    by John Muler
-                    <Rate index={i} />
+                    <Rate index={i}/> 
+                    <div><UserIcon/><span>By John Muler</span></div>
                   </CardContent>
-                  <CardActions disableSpacing>
-                    <FavoriteFood />
-                    <EyeIcon />
-
-                    <DetailButtons />
+                  <CardActions disableSpacing className={classes.cardAction}>
+                    <div>
+                      <FavoriteFood/><span>50</span>
+                      <EyeIcon/><span>10K</span>
+                    </div>
+                    <DetailButtons/>
                   </CardActions>
                 </Card>
               </Grid>
