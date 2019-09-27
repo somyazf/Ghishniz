@@ -9,7 +9,7 @@ const useSpoonacularApi = () => {
     const [data, setData] = useState([]);
     const [totalResults, setTotalResults] = useState([]);
     const [url, setUrl] = useState(
-        `${baseUrl}/recipes/search?apiKey=${SpoonacularApi}&query=beef&_number=12`,
+        `${baseUrl}/recipes/search?apiKey=${SpoonacularApi}&query=beef&number=1000`,
     );
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
