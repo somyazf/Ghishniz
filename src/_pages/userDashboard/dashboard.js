@@ -1,7 +1,7 @@
 import React from "react";
 import MainNavbar from "../../components/layout/MainNavbar/MainNavbar";
 import MainSidebar from "../../components/layout/MainSidebar/MainSidebar";
-import MainFooter from "../../components/layout/MainFooter";
+// import MainFooter from "../../components/layout/MainFooter";
 import { Row, Col } from "shards-react";
 import { Container } from "shards-react";
 import "bootstrap/dist/css/bootstrap.min.css";

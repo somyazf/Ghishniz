@@ -9,24 +9,23 @@ import Paper from "@material-ui/core/Paper";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    padding: '2px 20px',
-      display: 'flex',
-      alignItems: 'center',
-      width: 550,
-      borderRadius: 50,
-      justifyCntent: 'space-between',
-
+    padding: "2px 20px",
+    display: "flex",
+    alignItems: "center",
+    width: 550,
+    borderRadius: 50,
+    justifyCntent: "space-between"
   },
   formControl: {
     margin: theme.spacing(1),
-    width:"100%",
+    width: "100%"
   },
   label: {
-    fontSize:'30px',
+    fontSize: "30px"
   },
   searchIcon: {
-      fontSize:"20px",
-      marginTop:"40px",
+    fontSize: "20px",
+    marginTop: "40px"
   }
 }));
 
@@ -35,19 +34,23 @@ function MainPageSearch() {
   return (
     <Paper className={classes.root}>
       <FormControl className={classes.formControl}>
-        <InputLabel className={classes.label} htmlFor="input-with-icon-adornment">Search</InputLabel>
-        <Input 
-        id="input-with-icon-adornment"
-        startAdornment={
-          <InputAdornment>
-            <SearchIcon/>
-          </InputAdornment>
-        }
-        className={classes.searchIcon}
+        <InputLabel
+          className={classes.label}
+          htmlFor="input-with-icon-adornment"
+        >
+          Search
+        </InputLabel>
+        <Input
+          id="input-with-icon-adornment"
+          startAdornment={
+            <InputAdornment>
+              <SearchIcon />
+            </InputAdornment>
+          }
+          className={classes.searchIcon}
         />
       </FormControl>
     </Paper>
-  
   );
 }
 
