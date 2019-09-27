@@ -69,24 +69,23 @@ import IconButton from '@material-ui/core/IconButton';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    padding: '2px 20px',
-      display: 'flex',
-      alignItems: 'center',
-      width: 550,
-      borderRadius: 50,
-      justifyCntent: 'space-between',
-
+    padding: "2px 20px",
+    display: "flex",
+    alignItems: "center",
+    width: 550,
+    borderRadius: 50,
+    justifyCntent: "space-between"
   },
   formControl: {
     margin: theme.spacing(1),
-    width:"100%",
+    width: "100%"
   },
   label: {
-    fontSize:'30px',
+    fontSize: "30px"
   },
   searchIcon: {
-      fontSize:"20px",
-      marginTop:"40px",
+    fontSize: "20px",
+    marginTop: "40px"
   }
 }));
 
@@ -106,7 +105,7 @@ function MainPageSearch(props) {
 
   return (
     <Paper className={classes.root}>
-        <form onSubmit={submitHandler}
+        {/* <form onSubmit={submitHandler}
         className={classes.formWidth}
         >
             <input
@@ -118,7 +117,24 @@ function MainPageSearch(props) {
         </form>
         <IconButton className={classes.iconButton} aria-label="search" type="submit">
             <SearchIcon />
-        </IconButton>
+        </IconButton> */}
+      <FormControl className={classes.formControl}>
+        <InputLabel
+          className={classes.label}
+          htmlFor="input-with-icon-adornment"
+        >
+          Search
+        </InputLabel>
+        <Input
+          id="input-with-icon-adornment"
+          startAdornment={
+            <InputAdornment>
+              <SearchIcon />
+            </InputAdornment>
+          }
+          className={classes.searchIcon}
+        />
+      </FormControl>
     </Paper>
   );
 }
