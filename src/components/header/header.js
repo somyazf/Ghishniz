@@ -1,6 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
-import { withRouter } from "react-router-dom";
-import "../../App.css";
+import React from "react";
+import "App.css";
 import LogoPage from "./logo";
 import NavBarMenu from "./navBar";
 
@@ -17,5 +16,4 @@ const Header = () => {
   );
 };
 
-withRouter(Header);
 export { Header };

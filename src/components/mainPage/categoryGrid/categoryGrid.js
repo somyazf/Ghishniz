@@ -2,10 +2,10 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
-import Breakfast from '../../../assets/breakfast.jpg';
-import Lunch from '../../../assets/lunch.jpg';
-import Dinner from '../../../assets/dinner.jpg';
-import Dessert from '../../../assets/dessert.jpg';
+import Breakfast from 'assets/images/site/breakfast.jpg';
+import Lunch from 'assets/images/site/lunch.jpg';
+import Dinner from 'assets/images/site/dinner.jpg';
+import Dessert from 'assets/images/site/dessert.jpg';
 
 
 const images = [
@@ -47,7 +47,7 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
     height: 350,
     [theme.breakpoints.down('xs')]: {
-      width: '100% !important', // Overrides inline-style
+      width: '100% !important',
       height: 100,
     },
     '&:hover, &$focusVisible': {
@@ -97,6 +97,10 @@ const useStyles = makeStyles(theme => ({
   imageTitle: {
     position: 'relative',
     padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${theme.spacing(1) + 6}px`,
+    color: '#fff !important'
+  },
+  imageSubTitle: {
+    color: '#fff !important'
   },
   imageMarked: {
     height: 3,
@@ -112,7 +116,8 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     alignItems: 'center',
     padding: '0 25px',
-    paddingTop: 15
+    paddingTop: 15,
+    color: '#fff !important'
   }
 }));
 
@@ -142,7 +147,6 @@ export default function ButtonBases() {
                 <div className={classes.typography}>    
                     <Typography
                     variant="h6"
-                    color="inherit"
                     gutterBottom
                     className={classes.imageTitle}
                     >
@@ -152,7 +156,7 @@ export default function ButtonBases() {
                     <Typography
                     component="p"
                     variant="subtitle1"
-                    color="inherit"
+                    className={classes.imageSubTitle}
                     >
                     {image.subtitle}
                     </Typography>

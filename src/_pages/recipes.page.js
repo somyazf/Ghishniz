@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import Loading from '../assets/restaurants_plus_loading_animation_for_dribbble.gif';
 import { Link,withRouter } from "react-router-dom";
-import axios from 'axios';
 import InnerSidebar from "../components/innerPageSidebar/innerPageSidebar";
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from "@material-ui/core/Typography";
@@ -14,11 +12,12 @@ import Paper from '@material-ui/core/Paper';
 import Grid from "@material-ui/core/Grid";
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
-import Rate from "../components/mainPage/icons/rating";
+import Rate from "components/mainPage/icons/rating";
 import Button from "@material-ui/core/Button";
 import {connect} from "react-redux";
-import { getDataAction } from "../_actions";
-import { Footer } from '../components/footer/footer';
+import { getDataAction } from "_actions";
+import { Footer } from 'components/footer/footer';
+import Loading from 'assets/images/site/Noodles.gif';
 
 const imgUrl = "https://spoonacular.com/recipeImages/";
 
@@ -29,14 +28,17 @@ const useStyles = makeStyles(theme => ({
       alignItems: 'center',
       width: 550,
       borderRadius: 25,
-      justifyCntent: 'space-between',
-      margin: '40px 44px',
+      justifyContent: 'space-between',
+      marginTop: 50
     },
     input: {
       marginLeft: theme.spacing(1),
       flex: 1,
       border: 'none',
       padding: 5,
+      outline: 'none',
+      width: "100%",
+      fontSize: '1.2rem'
     },
     iconButton: {
       padding: 10,
@@ -60,9 +62,13 @@ const useStyles = makeStyles(theme => ({
         display: 'flex',
         justifyContent: 'space-around',
     },
+    cardAction: {
+        alignItems: 'baseline',
+        justifyContent: 'space-around',
+    },
     media: {
       height: 0,
-      paddingTop: "56.25%" // 16:9
+      paddingTop: "56.25%"
     },
     recipeSec: {
         display: 'flex',
@@ -78,6 +84,16 @@ const useStyles = makeStyles(theme => ({
     margin: {
         margin: '40px 44px',
     },
+    loadingImg:{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: 'auto'
+    },
+    button: {
+        margin: theme.spacing(1),
+        color: '#fff !important'
+      },
   }));
 
 const Recipes = (props) => {
@@ -95,7 +111,7 @@ const Recipes = (props) => {
 
     return <>
         <Grid container>
-            <Grid item xs>
+            <Grid item xs={2}>
                 <InnerSidebar/>
             </Grid>
             <Grid item xs={10} >
@@ -119,14 +135,14 @@ const Recipes = (props) => {
                 <Grid className={classes.margin}>
                     <Grid className={classes.margin}>
                         <Typography>
-                            {items.totalResults}suggested recipes
+                            {items.totalResults} Suggested Recipes
                         </Typography>
                     </Grid>
                     <Grid>
                         {error && <div>Something went wrong ...</div>}
                         {loading ? (
                             <div>
-                                <img src={Loading} alt="Loading"/>
+                                <img src={Loading} alt="Loading" className={classes.loadingImg}/>
                             </div>
                         ) : (
                                 <Grid className={classes.centeredDiv}>
@@ -144,20 +160,19 @@ const Recipes = (props) => {
                                                     <span>{recipe.servings} Yield</span>
                                                 </CardContent>
                                                 <CardHeader
-                                                    title={recipe.title.length < 18 ? `${recipe.title}` : `${recipe.title.substring(0, 25)}...` }
-                                                    varriant = "subtitle1"
-                                                    titleTypographyProps = {{variant: "h6"}}
+                                                    title={recipe.title.length < 18 ? `${recipe.title}` : `${recipe.title.substring(0, 18)}...` }
                                                 />
-                                                <CardActions disableSpacing>
-                                                    <Rate/>
-                                                    <Button type="button" component={Link} to={{ 
+                                                <CardActions disableSpacing className={classes.cardAction}>
+                                                    <Rate/> 
+                                                    <Button variant="contained" color="secondary" className={classes.button} component={Link} to={{ 
                                                         pathname: `/recipe/${recipe.id}`,
                                                         state: { 
                                                             recipe: recipe.title, 
                                                             id: recipe.id
-                                                            }
-                                                        }} 
-                                                        variant="outlined" size="small">Detail</Button>  
+                                                        }}} 
+                                                    >
+                                                        Detail
+                                                    </Button>
                                                 </CardActions>
                                             </Card>
                                         </Grid>
