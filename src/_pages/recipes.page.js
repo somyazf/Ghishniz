@@ -100,7 +100,7 @@ const useStyles = makeStyles(theme => ({
 
 const Recipes = props => {
   const { dispatch, error, loading, items,location } = props;
-  debugger
+
   const classes = useStyles();
   const [query, setQuery] = useState("beef");
 
@@ -114,7 +114,6 @@ const Recipes = props => {
   };
 
   useEffect(()=>{
-    debugger
     dispatch(getDataAction.fetchRecipes(query));
   },[])
 
