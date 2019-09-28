@@ -57,11 +57,12 @@ const useStyles = makeStyles(theme => ({
 
 const SingleRecipe = (props) =>  {
   const id = props.location.state.id;
-  const {error, loading, items} = props;
-  const dispatch = useDispatch();
+  const {dispatch, error, loading, items} = props;
+  // const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getRecipesInfoAction.getRecipesInfo(id));
   }, []);
+  // debugger
    
   const classes = useStyles();
   return <>
