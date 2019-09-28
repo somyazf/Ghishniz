@@ -1,5 +1,3 @@
-import React from "react";
-import { Redirect } from "react-router-dom";
 import LoginPages from '../_pages/login_page';
 import { DefaultLayout } from "../layouts";
 import { 
@@ -13,7 +11,6 @@ import {
   BlogOverview
 } 
 from "../_pages";
-import UserDashboard from "../_pages/userDashboard/dashboard";
 
 const Routes = [
   {
@@ -36,11 +33,6 @@ const Routes = [
   {
     path: "/register",
     component: RegisterPage
-  },
-
-  {
-    path: "/dashboard",
-    component: UserDashboard
   },
 
   {

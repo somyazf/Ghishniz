@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, withRouter } from "react-router-dom";
 import InnerSidebar from "../components/innerPageSidebar/innerPageSidebar";
 import { makeStyles } from "@material-ui/core/styles";
@@ -19,7 +19,6 @@ import { getDataAction } from "_actions";
 import { Footer } from "components/footer/footer";
 import Loading from "assets/images/site/Noodles.gif";
 import ReactDOM from 'react-dom';
-import {BrowserRouter} from 'react-router-dom';
 import App from '../App';
 
 const imgUrl = "https://spoonacular.com/recipeImages/";
@@ -100,7 +99,8 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Recipes = props => {
-  const { dispatch, error, loading, items } = props;
+  const { dispatch, error, loading, items,location } = props;
+  debugger
   const classes = useStyles();
   const [query, setQuery] = useState("beef");
 
@@ -108,9 +108,15 @@ const Recipes = props => {
     event.preventDefault();
     dispatch(getDataAction.fetchRecipes(query));
   };
+
   const handleChange = event => {
     setQuery(event.target.value);
   };
+
+  useEffect(()=>{
+    debugger
+    dispatch(getDataAction.fetchRecipes(query));
+  },[])
 
   return (
     <>
@@ -155,7 +161,7 @@ const Recipes = props => {
               ) : (
                 <Grid className={classes.centeredDiv}>
                   {items.results &&
-                    items.results.map(recipe => (
+                    items.results.map((recipe,i) => (
                       <Grid key={recipe.id} item lg={3}>
                         <Card className={classes.card}>
                           <CardMedia
@@ -179,7 +185,7 @@ const Recipes = props => {
                             disableSpacing
                             className={classes.cardAction}
                           >
-                            <Rate />
+                            <Rate index={i}/>
                             <Button
                               variant="contained"
                               color="secondary"
