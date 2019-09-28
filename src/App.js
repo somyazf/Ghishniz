@@ -27,7 +27,8 @@ const App = ({user}) =>{
     return<>
         <Router history={history}>
           <Switch>
-            {Routes.map(({component:Component,layout:Layout, ...rest})=><Route
+            {Routes.map(({component:Component,path:path,layout:Layout, ...rest})=><Route 
+              key={new Date().getDate()}
               {...rest}
               component = {Layout ? withLayout(props=><Layout {...props}><Component {...props}/></Layout>): withLayout(props=><Component {...props}/>)}
             />)}
