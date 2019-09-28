@@ -39,11 +39,6 @@ const Routes = [
   },
 
   {
-    path: "/dashboard",
-    component: UserDashboard
-  },
-
-  {
     path: "/blog-overview",
     layout: DefaultLayout,
     component: BlogOverview
