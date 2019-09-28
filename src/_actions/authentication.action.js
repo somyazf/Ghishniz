@@ -13,7 +13,7 @@ function login (login,password,history) {
         authenticationService.login(login,password).then(
             response => {
                 dispatch(success(response));
-                history.push('/');
+                history.push('/blog-overview');
             },
             error =>{
                 dispatch(failed(''));
