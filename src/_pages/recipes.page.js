@@ -112,8 +112,6 @@ const Recipes = props => {
     setQuery(event.target.value);
   };
 
-
-
   return (
     <>
       <Grid container>
@@ -190,7 +188,6 @@ const Recipes = props => {
                               to={{
                                 pathname: `/recipe/${recipe.id}`,
                                 state: {
-                                  recipe: recipe.title,
                                   id: recipe.id
                                 }
                               }}
