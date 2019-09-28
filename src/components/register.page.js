@@ -1,10 +1,10 @@
 import React,{ useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Grid from "@material-ui/core/Grid";
+import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
-import { Link,withRouter } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { AUTHHOST } from '_constants/other.constants';
 import Axios from 'axios';
 import Snackbar from '@material-ui/core/Snackbar';
@@ -81,7 +81,7 @@ const RegisterPage = (props) => {
 
     return <>
         <Grid container className="loReBg">
-            <Grid lg={6}>
+            <Grid item xs={6}>
                 <Grid className={classes.formWrap}>
                     <form onSubmit={submitHandler}>
                         <Typography variant="h3" component="h1" color="textSecondary" gutterBottom >
@@ -151,5 +151,4 @@ const RegisterPage = (props) => {
     </>
 }
 
-withRouter(RegisterPage);
 export {RegisterPage};

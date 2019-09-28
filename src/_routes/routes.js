@@ -1,10 +1,10 @@
-import LoginPages from '../_pages/login_page';
 import { DefaultLayout } from "../layouts";
 import { 
   Home,
   Recipes, 
   SingleRecipe, 
-  RegisterPage, 
+  LoginPages,
+  RegisterPages, 
   BlogPosts, 
   AddNewPost, 
   UserProfileLite, 
@@ -32,7 +32,7 @@ const Routes = [
   },
   {
     path: "/register",
-    component: RegisterPage
+    component: RegisterPages
   },
 
   {

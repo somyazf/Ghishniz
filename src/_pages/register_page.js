@@ -2,6 +2,7 @@ import React from "react";
 import { Header } from "components/header/header";
 import { Footer } from "components/footer/footer";
 import { RegisterPage } from "components/register.page";
+import { withRouter } from "react-router-dom";
 
 const RegisterPages = () => {
   return (
@@ -13,4 +14,5 @@ const RegisterPages = () => {
   );
 };
 
-export default RegisterPages;
+withRouter(RegisterPage);
+export {RegisterPages};

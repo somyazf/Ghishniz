@@ -1,17 +1,17 @@
-import React,{useState} from 'react';
+import React,{ useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Grid from "@material-ui/core/Grid";
+import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
-import { Link,withRouter } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import Snackbar from '@material-ui/core/Snackbar';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
-import { authenticationAction } from "../_actions";
-import LogoPage from './header/logo';
+import { authenticationAction } from '_actions';
 import { connect } from "react-redux";
+
 const useStyles = makeStyles(theme =>({
     textField: {
         width: '100%'
@@ -69,7 +69,7 @@ const LoginPage = (props) => {
 
     return <>
         <Grid container className="loReBg">
-            <Grid lg={6}>
+            <Grid item xs={6}>
                 <Grid className={classes.formWrap}>
                     <form onSubmit={submitHandler}>
                         <Typography variant="h3" component="h1" color="textSecondary" gutterBottom>
@@ -137,5 +137,5 @@ const mapStateToProps = state => {
     return { loginRequest };
 };
 
-const ConnectedLoginPage = withRouter(connect(mapStateToProps)(LoginPage));
+const ConnectedLoginPage = connect(mapStateToProps)(LoginPage);
 export {ConnectedLoginPage as LoginPage};

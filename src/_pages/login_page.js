@@ -1,17 +1,18 @@
 import React from "react";
-import { Header } from "../components/header/header";
-import { Footer } from "../components/footer/footer";
-import { LoginPage } from "../components/login.page";
+import { Header } from "components/header/header";
+import { Footer } from "components/footer/footer";
+import { LoginPage } from "components/login.page";
+import { withRouter } from "react-router-dom";
 
 const LoginPages = () => {
   return (
     <>
-      <Header />
+      <Header/>
       <LoginPage/>
-      <Footer />
+      <Footer/>
     </>
   );
 };
 
-
-export default LoginPages;
+withRouter(LoginPages);
+export {LoginPages};
