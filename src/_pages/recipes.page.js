@@ -161,7 +161,7 @@ const Recipes = props => {
               ) : (
                 <Grid className={classes.centeredDiv}>
                   {items.results &&
-                    items.results.map(recipe => (
+                    items.results.map((recipe,i) => (
                       <Grid key={recipe.id} item lg={3}>
                         <Card className={classes.card}>
                           <CardMedia
@@ -185,7 +185,7 @@ const Recipes = props => {
                             disableSpacing
                             className={classes.cardAction}
                           >
-                            <Rate />
+                            <Rate index={i}/>
                             <Button
                               variant="contained"
                               color="secondary"
