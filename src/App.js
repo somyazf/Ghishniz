@@ -5,7 +5,7 @@ import withTracker from "./withTracker";
 import { history } from './_helpers/history';
 import { connect } from "react-redux";
 import './App.css';
-import { Home, Recipes, SingleRecipe, AddNewPost, BlogOverview, UserProfileLite } from './_pages';
+import { Home, Recipes, SingleRecipe, AddNewPost, BlogOverview, UserProfileLite, BlogPosts } from './_pages';
 import LoginPages from './_pages/login_page';
 import RegisterPages from './_pages/register_page';
 import UserDashboard from './_pages/userDashboard/dashboard';
@@ -22,8 +22,10 @@ const App = ({user}) =>{
             <Route path="/recipe/:id" component={SingleRecipe} />
             <Route path="/login" component={LoginPages}/>
             <Route path="/register" component={RegisterPages}/>
-            <Route path="/addnewpost" component={AddNewPost}/>
+            <Route path="/add-new-post" component={AddNewPost}/>
+            <Route path="/blog-posts" component={BlogPosts}/>
             <Route path="/blog-overview" component={BlogOverview}/>
+            <Route path="/user-profile-lite" component={UserProfileLite}/>
             <Route path="/dashboard" render={ ()=> <UserDashboard  component={BlogOverview} />}/>
           </Switch>
 
