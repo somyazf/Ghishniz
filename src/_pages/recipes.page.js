@@ -18,8 +18,6 @@ import { connect } from "react-redux";
 import { getDataAction } from "_actions";
 import { Footer } from "components/footer/footer";
 import Loading from "assets/images/site/Noodles.gif";
-import ReactDOM from 'react-dom';
-import App from '../App';
 
 const imgUrl = "https://spoonacular.com/recipeImages/";
 
@@ -100,7 +98,6 @@ const useStyles = makeStyles(theme => ({
 
 const Recipes = props => {
   const { dispatch, error, loading, items,location } = props;
-  debugger
   const classes = useStyles();
   const [query, setQuery] = useState("beef");
 
@@ -114,7 +111,6 @@ const Recipes = props => {
   };
 
   useEffect(()=>{
-    debugger
     dispatch(getDataAction.fetchRecipes(query));
   },[])
 
