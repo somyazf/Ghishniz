@@ -38,7 +38,8 @@
     "scroll-background": "^1.0.5",
     "scroll-nav-template": "^1.0.1",
     "shards-react": "^1.0.3",
-    "spoonacular_api": "^1.0.0"
+    "spoonacular_api": "^1.0.0",
+    "universal-cookie": "^4.0.2"
   },
   "scripts": {
     "start": "react-scripts start",

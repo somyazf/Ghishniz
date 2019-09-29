@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Cookies from 'universal-cookie';
+
 import {
   Dropdown,
   DropdownToggle,
@@ -9,6 +11,13 @@ import {
   NavItem,
   NavLink
 } from "shards-react";
+
+
+
+const cookie = new Cookies();
+const userDetails = {
+  name: cookie.get('username'),
+}
 
 export default class UserActions extends React.Component {
   constructor(props) {
@@ -27,6 +36,8 @@ export default class UserActions extends React.Component {
     });
   }
 
+
+
   render() {
     return (
       <NavItem tag={Dropdown} caret toggle={this.toggleUserActions}>
@@ -36,7 +47,7 @@ export default class UserActions extends React.Component {
             src={require("assets/images/avatars/0.jpg")}
             alt="User Avatar"
           />{" "}
-          <span className="d-none d-md-inline-block">Sierra Brooks</span>
+          <span className="d-none d-md-inline-block">{userDetails.name}</span>
         </DropdownToggle>
         <Collapse tag={DropdownMenu} right small open={this.state.visible}>
           <DropdownItem tag={Link} to="user-profile">
