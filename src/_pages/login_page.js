@@ -2,7 +2,6 @@ import React from "react";
 import { Header } from "components/header/header";
 import { Footer } from "components/footer/footer";
 import { LoginPage } from "components/login.page";
-import { withRouter } from "react-router-dom";
 
 const LoginPages = () => {
   return (
@@ -14,5 +13,4 @@ const LoginPages = () => {
   );
 };
 
-withRouter(LoginPages);
 export {LoginPages};
