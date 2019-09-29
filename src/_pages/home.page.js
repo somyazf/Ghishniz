@@ -7,7 +7,7 @@ import RecentlyAddedSec from 'components/mainPage/recentlyAdded/recentlyAdded';
 import Banner from 'components/mainPage/banner/banner';
 import Offer  from "components/mainPage/offerSection/offerSec";
 import ButtonBases  from "components/mainPage/categoryGrid/categoryGrid";
-import { Col, Row, Container, TabContainer} from 'react-bootstrap';
+import { Col, Row, Container} from 'react-bootstrap';
 
 export default function Home() {
     return <>

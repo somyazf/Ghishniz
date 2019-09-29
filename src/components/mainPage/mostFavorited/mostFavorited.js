@@ -7,7 +7,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
-import Rate from "../icons/rating";
+// import Rate from "../icons/rating";
 import EyeIcon from "../icons/eyeIcon";
 import FavoriteFood from "../icons/favorite";
 import DetailButtons from "../buttons/button";

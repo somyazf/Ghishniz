@@ -100,7 +100,7 @@ const Recipes = props => {
 
   const classes = useStyles();
   
-  const { dispatch, error, loading, items,location } = props;
+  const { dispatch, error, loading, items} = props;
   const [query, setQuery] = useState("beef");
 
   const submitHandler = async event => {

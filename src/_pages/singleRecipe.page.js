@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
 import InnerSidebar from "components/innerPageSidebar/innerPageSidebar";
 import Typography from "@material-ui/core/Typography";
@@ -57,7 +57,7 @@ const useStyles = makeStyles(theme => ({
 
 const SingleRecipe = (props) =>  {
   const id = props.location.state.id;
-  const {dispatch, error, loading, items} = props;
+  const {dispatch, items} = props;
   // const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getRecipesInfoAction.getRecipesInfo(id));

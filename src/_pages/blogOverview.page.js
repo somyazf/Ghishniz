@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Container, Row, Col } from "shards-react";
 import PageTitle from "./../components/common/PageTitle";
 import SmallStats from "./../components/common/SmallStats";
-import { Link,withRouter } from "react-router-dom";
+import {withRouter } from "react-router-dom";
 // import UsersOverview from "./../components/blog/UsersOverview";
 // import UsersByDevice from "./../components/blog/UsersByDevice";
 // import NewDraft from "./../components/blog/NewDraft";

@@ -1,45 +1,55 @@
 import React, { useState } from "react";
-import ReactQuill from "react-quill";
-import { 
-  Card, 
-  CardBody, 
-  Form, 
+import {
   FormInput, 
   InputGroup,
   InputGroupText,
   InputGroupAddon, 
 } from "shards-react";
-import { Col, Row } from 'react-bootstrap';
-
-import "react-quill/dist/quill.snow.css";
-import "assets/styles/quill.css";
 import { Button } from "@material-ui/core";
 
-// const [item, setItem] = useState();
+const MultipleInput = () => {
 
-// const handleChange = event => {
-//     setItem(...item);
-// };
+const blankIngredinet = {ingredient:''};
+const [inputs, setInputs] = useState([
+    {...blankIngredinet}
+]);
 
-const multipleInput = () => {
+const addInput = () =>{
+    setInputs([...inputs, {...blankIngredinet}]);
+}
+
+const handleChange = (event) => {
+    const updatedInputs = [...inputs];
+    updatedInputs[event.target.name] = event.target.value;
+    setInputs(updatedInputs);   
+}
+
+const handleRemove = (id) =>{
+    const idx = inputs.findIndex(row => row.id === id);
+    inputs.splice(idx, 1);
+    setInputs(inputs);
+}
+
     return <>
-        <InputGroup className="mb-2">
-            <InputGroupAddon type="prepend">
-                <InputGroupText>Ingredient:</InputGroupText>
-            </InputGroupAddon>
-            <FormInput />
-        </InputGroup>
-        {/* {
-            item.map((item,index)=>{
-                <div>
-                    <input value={item}/>
-                </div>
+        {
+            inputs.map((ing,index)=>{
+                const ingId = `ingredient-${index}`;
+                return(
+                    <InputGroup className="mb-2" key={index}>
+                        <InputGroupAddon type="prepend">
+                            <InputGroupText>{`Ingredient ${index + 1}:`}</InputGroupText>
+                        </InputGroupAddon>
+                        <FormInput value={inputs[index].ingId} name={ingId} onChange={handleChange}/>
+                        <InputGroupAddon type="append">
+                            <Button theme="secondary" onClick={handleRemove}>Remove</Button>
+                        </InputGroupAddon>
+                    </InputGroup>
+                )
             })
         } */}
         
-        <Button variant="outlined" color="secondary"/>
+        <Button variant="outlined" color="secondary" onClick={addInput}>Add Ingredient</Button>
     </>
 }
 
-
-export default multipleInput;
+export default MultipleInput;
