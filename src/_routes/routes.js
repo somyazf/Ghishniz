@@ -10,7 +10,7 @@ import {
   UserProfileLite, 
   BlogOverview
 } 
-from "../_pages";
+from "_pages";
 
 const Routes = [
   {
