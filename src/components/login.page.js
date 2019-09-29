@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import Snackbar from '@material-ui/core/Snackbar';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import IconButton from '@material-ui/core/IconButton';
@@ -137,5 +137,5 @@ const mapStateToProps = state => {
     return { loginRequest };
 };
 
-const ConnectedLoginPage = connect(mapStateToProps)(LoginPage);
+const ConnectedLoginPage = withRouter(connect(mapStateToProps)(LoginPage));
 export {ConnectedLoginPage as LoginPage};
