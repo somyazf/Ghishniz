@@ -15,11 +15,11 @@ import "react-quill/dist/quill.snow.css";
 import "assets/styles/quill.css";
 import { Button } from "@material-ui/core";
 
-const [item, setItem] = useState();
+// const [item, setItem] = useState();
 
-const handleChange = event => {
-    setItem(...item);
-};
+// const handleChange = event => {
+//     setItem(...item);
+// };
 
 const multipleInput = () => {
     return <>
@@ -29,14 +29,17 @@ const multipleInput = () => {
             </InputGroupAddon>
             <FormInput />
         </InputGroup>
-        {
+        {/* {
             item.map((item,index)=>{
                 <div>
                     <input value={item}/>
                 </div>
             })
-        }
+        } */}
         
         <Button variant="outlined" color="secondary"/>
     </>
 }
+
+
+export default multipleInput;
