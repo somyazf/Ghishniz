@@ -1,12 +1,10 @@
-import React,{ useState } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
-import { AUTHHOST } from '_constants/other.constants';
-import Axios from 'axios';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
@@ -40,44 +38,11 @@ const useStyles = makeStyles(theme =>({
     }
 }));
 
-const RegisterPage = (props) => {
-
-    const [values,setValues] = useState({
-        email: '',
-        password: '',
-        name: ''
-    })
-    const [responseMessage,setResponseMessage] = useState(null);
+const RegisterPage = ({ 
+    responseMessage, valuesPass, valuesName, valuesEmail, handleChange, submitHandler, handleClose 
+    }) => {
 
     const classes = useStyles();
-
-    const handleChange = ({target:{name,value}}) => {
-        setValues({ ...values, [name]: value });
-    };
-
-    const submitHandler = async (event) =>{
-        event.preventDefault();
-        try{
-            const response = await Axios({
-                method: 'post',
-                url: `${AUTHHOST}/users/register`,
-                headers: {
-                  'Content-Type': 'application/json',
-                },
-                data: values
-            });
-            if (response.status === 200){
-                setResponseMessage("Your user successfully registered");
-                props.history.push('/login');
-            }
-        } catch (error){
-            setResponseMessage(error.response.data.message);
-        }
-    }
-
-    const handleClose = () =>{
-        setResponseMessage(null);
-    }
 
     return <>
         <Grid container className="loReBg">
@@ -92,7 +57,7 @@ const RegisterPage = (props) => {
                             label="Full Name"
                             name="name"
                             className={classes.textField}
-                            value={values.name}
+                            value={valuesName}
                             onChange={handleChange}
                             margin="normal"
                             required
@@ -102,7 +67,7 @@ const RegisterPage = (props) => {
                             label="Email"
                             name="email"
                             className={classes.textField}
-                            value={values.email}
+                            value={valuesEmail}
                             onChange={handleChange}
                             margin="normal"
                             type="email"
@@ -113,7 +78,7 @@ const RegisterPage = (props) => {
                             label="Password"
                             name="password"
                             className={classes.textField}
-                            value={values.password}
+                            value={valuesPass}
                             onChange={handleChange}
                             margin="normal"
                             type="password"
