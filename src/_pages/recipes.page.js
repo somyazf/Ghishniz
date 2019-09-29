@@ -97,8 +97,10 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Recipes = props => {
-  const { dispatch, error, loading, items,location } = props;
+
   const classes = useStyles();
+  
+  const { dispatch, error, loading, items,location } = props;
   const [query, setQuery] = useState("beef");
 
   const submitHandler = async event => {
