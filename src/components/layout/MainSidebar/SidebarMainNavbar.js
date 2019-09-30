@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Navbar, NavbarBrand } from "shards-react";
-
+import {Link} from 'react-router-dom'
 import { Dispatcher, Constants } from "../../../flux";
 
 class SidebarMainNavbar extends React.Component {
@@ -31,6 +31,7 @@ class SidebarMainNavbar extends React.Component {
             style={{ lineHeight: "25px" }}
           >
             <div className="d-flex m-auto align-items-center">
+              <Link to='/'>
               <img
                 id="main-logo"
                 className="d-inline-block align-top mr-1"
@@ -38,6 +39,7 @@ class SidebarMainNavbar extends React.Component {
                 src={require("assets/images/site/newlogo-gishniz.png")}
                 alt="Gishniz"
               />
+              </Link>
               {!hideLogoText && (
                 <span className="d-flex d-md-inline ml-1 align-items-center" style={{fontSize:'20px',fontWeight:"bold"
               }}>
