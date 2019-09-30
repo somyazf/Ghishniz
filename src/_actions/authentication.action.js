@@ -14,7 +14,9 @@ function login (login,password,history) {
             response => {
                 dispatch(success(response));
                 let cookie = new Cookies();
-                cookie.set('username', response.name);
+                cookie.set('name', response.name);
+                cookie.set('email', response.email);
+
                 history.push('/blog-overview');
 
             },

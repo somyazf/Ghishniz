@@ -1,5 +1,7 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
+import Cookies from 'universal-cookie';
+
 import {
   Card,
   CardHeader,
@@ -8,22 +10,17 @@ import {
   Row,
   Col,
   Form,
-  FormGroup,
   FormInput,
-  FormSelect,
-  FormTextarea,
   Button
 } from "shards-react";
 
 
 
 const UserAccountDetails = ({ title }) => {
-
+  const cookie = new Cookies();
   const [values,setValues] = useState({
-    name: '',
-    lastName: '',
-    email: '',
-    password: ''
+    name: cookie.get('name'),
+    email: cookie.get('email'),
 })
 
 const handleChange = ({target:{name,value}}) => {
@@ -50,9 +47,7 @@ const handleChange = ({target:{name,value}}) => {
                     value={values.name}
                     onChange={handleChange}
                   />
-                </Col>
-              </Row>
-              <Row form>
+                </Col>              
                 {/* Email */}
                 <Col md="6" className="form-group">
                   <label htmlFor="feEmail">Email</label>
@@ -66,20 +61,8 @@ const handleChange = ({target:{name,value}}) => {
                     autoComplete="email"
                   />
                 </Col>
-                {/* Password */}
-                <Col md="6" className="form-group">
-                  <label htmlFor="fePassword">Password</label>
-                  <FormInput
-                    name="password"
-                    type="password"
-                    id="fePassword"
-                    placeholder="Password"
-                    value={values.password}
-                    onChange={handleChange}
-                    autoComplete="current-password"
-                  />
-                </Col>
-              </Row>
+                </Row>
+             
             
              
              
