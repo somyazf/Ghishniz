@@ -51,8 +51,7 @@ const MultipleInput = ({
                     </InputGroup>
                 )
             })
-        } */}
-        
+        }
         <Button variant="outlined" color="secondary" onClick={addInput}>Add Ingredient</Button>
     </>
 }
