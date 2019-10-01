@@ -97,10 +97,9 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Recipes = props => {
-
   const classes = useStyles();
-  
-  const { dispatch, error, loading, items} = props;
+
+  const { dispatch, error, loading, items } = props;
   const [query, setQuery] = useState("beef");
 
   const submitHandler = async event => {
@@ -112,9 +111,9 @@ const Recipes = props => {
     setQuery(event.target.value);
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     dispatch(getDataAction.fetchRecipes(query));
-  },[])
+  }, []);
 
   return (
     <>
@@ -159,7 +158,7 @@ const Recipes = props => {
               ) : (
                 <Grid className={classes.centeredDiv}>
                   {items.results &&
-                    items.results.map((recipe,i) => (
+                    items.results.map((recipe, i) => (
                       <Grid key={recipe.id} item lg={3}>
                         <Card className={classes.card}>
                           <CardMedia
@@ -183,7 +182,7 @@ const Recipes = props => {
                             disableSpacing
                             className={classes.cardAction}
                           >
-                            <Rate index={i}/>
+                            <Rate index={i} />
                             <Button
                               variant="contained"
                               color="secondary"

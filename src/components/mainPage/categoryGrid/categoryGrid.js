@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import ButtonBase from '@material-ui/core/ButtonBase';
+import Button from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
 import Breakfast from 'assets/images/site/breakfast.jpg';
 import Lunch from 'assets/images/site/lunch.jpg';
 import Dinner from 'assets/images/site/dinner.jpg';
 import Dessert from 'assets/images/site/dessert.jpg';
+import {Link} from "react-router-dom";
 
 
 const images = [
@@ -121,20 +122,32 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function ButtonBases() {
+
+
+
+
+export default function ButtonBases(props) {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
         {images.map(image => (
-            <ButtonBase
+            <Button
             focusRipple
             key={image.title}
             className={classes.image}
             focusVisibleClassName={classes.focusVisible}
             style={{
-                width: image.width,
+                width: image.width
             }}
+            // component = {Link}
+            // to = {{
+            //   pathname : `/Recipes`,
+            //    state: {
+            //     query : images.title
+            //   }
+            // }}
+           
             >
             <span
                 className={classes.imageSrc}
@@ -162,7 +175,7 @@ export default function ButtonBases() {
                     </Typography>
                 </div>
             </span>
-        </ButtonBase>
+        </Button>
         ))}
     </div>
   );
