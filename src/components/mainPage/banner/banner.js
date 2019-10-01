@@ -1,14 +1,14 @@
 import React from 'react';
 import 'App.css';
 import { Col, Row, Container} from 'react-bootstrap';
-import {MainPageSearch} from '../mainPageSearch/searchMainPage';
+import SearchPage from '../firstPageSearch/search';
 
 export default function Banner() {
   return (
     <Container fluid>
       <Row>
         <Col className="banner">
-          <MainPageSearch/>
+{/* <SearchPage/> */}
         </Col>
       </Row>
     </Container>

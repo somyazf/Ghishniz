@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../App.css';
-import { Col, Row, Image, Container, Button, Nav } from 'react-bootstrap';
+import { Col, Row,  Container,  Nav } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import Fab from "@material-ui/core/Fab";

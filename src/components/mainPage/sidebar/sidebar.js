@@ -11,7 +11,7 @@ import FeatureadArticle1 from "assets/images/site/feath-artic-1.jpg";
 import FeatureadArticle2 from "assets/images/site/feath-artic-2.jpg";
 import FeatureadArticle3 from "assets/images/site/feath-artic-3.jpg";
 import {
-   MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer }
+   MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask}
  from "mdbreact";
 
 const useStyles = makeStyles(theme => ({

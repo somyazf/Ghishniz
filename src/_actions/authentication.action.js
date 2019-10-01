@@ -1,6 +1,6 @@
 import { authenticationConstants } from "../_constants";
 import { authenticationService } from "../_service";
-
+import Cookies from 'universal-cookie';
 export const authenticationAction = {
     login,
     register
@@ -13,7 +13,12 @@ function login (login,password,history) {
         authenticationService.login(login,password).then(
             response => {
                 dispatch(success(response));
+                let cookie = new Cookies();
+                cookie.set('name', response.name);
+                cookie.set('email', response.email);
+
                 history.push('/blog-overview');
+
             },
             error =>{
                 dispatch(failed(''));

@@ -3,7 +3,7 @@ import { Container, Row, Col } from "shards-react";
 import PageTitle from "../components/common/PageTitle";
 import UserDetails from "../components/user-profile-lite/UserDetails";
 import UserAccountDetails from "../components/user-profile-lite/UserAccountDetails";
-import { Link,withRouter } from "react-router-dom";
+import {withRouter } from "react-router-dom";
 
 const UserProfileLite = () => (
   <Container fluid className="main-content-container px-4">

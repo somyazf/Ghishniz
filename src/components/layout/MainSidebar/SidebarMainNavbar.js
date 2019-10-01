@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Navbar, NavbarBrand } from "shards-react";
-
+import {Link} from 'react-router-dom'
 import { Dispatcher, Constants } from "../../../flux";
 
 class SidebarMainNavbar extends React.Component {
@@ -30,17 +30,20 @@ class SidebarMainNavbar extends React.Component {
             href="#"
             style={{ lineHeight: "25px" }}
           >
-            <div className="d-table m-auto">
+            <div className="d-flex m-auto align-items-center">
+              <Link to='/'>
               <img
                 id="main-logo"
                 className="d-inline-block align-top mr-1"
-                style={{ maxWidth: "25px" }}
-                src={require("assets/images/shards-dashboards-logo.svg")}
-                alt="Shards Dashboard"
+                style={{ maxWidth: "60px" }}
+                src={require("assets/images/site/newlogo-gishniz.png")}
+                alt="Gishniz"
               />
+              </Link>
               {!hideLogoText && (
-                <span className="d-none d-md-inline ml-1">
-                  Shards Dashboard
+                <span className="d-flex d-md-inline ml-1 align-items-center" style={{fontSize:'20px',fontWeight:"bold"
+              }}>
+                  Gishniz
                 </span>
               )}
             </div>
