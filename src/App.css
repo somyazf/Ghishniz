@@ -256,6 +256,71 @@ footer{
   font-size: 1.18rem;
 }
 
+/*mainPage search*/
+.suggest{
+  background: white;
+  box-shadow: 0 2px 6px 0px #98989896;
+  margin-top: 0;
+  padding: 30px 0 0 0;
+  border-radius: 10px;
+  position: absolute;
+  width: 100%;
+  top: 11px;
+  z-index: -1;
+}
+.suggest li{
+  list-style: none;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+.suggest li:hover{
+  background: rgb(194, 192, 192);
+}
 
-/* Dashboard */
+.additional{
+  margin-top: 18px;
+}
+/* upload input */
+[type="file"] {
+  height: 0;
+  overflow: hidden;
+  width: 0;
+}
+[type="file"] + label {
+  border: none;
+  border-radius: 5px;
+  color: #3c3c3c;
+  cursor: pointer;
+  display: inline-block;
+  font-size: inherit;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  outline: none;
+  padding: 10px 17px;
+  position: relative;
+  transition: all 0.3s;
+  vertical-align: middle;
+  text-decoration: underline;
+}
+.btn-2 {
+  overflow: hidden;
+}
+.btn-2:hover {
+  color: #2f5e9c;
+}
+.imgPreview{
+  padding: 0 8px 8px;
+}
+.imgPreview img{
+  width: 100%;
+  height: 180px;
+}
 
+/* navbar */
+.main-sidebar .nav .nav-item .nav-link{
+  color: #525252;
+  font-size: 1.001rem;
+}
