@@ -39,28 +39,16 @@ MainFooter.propTypes = {
 
 MainFooter.defaultProps = {
   contained: false,
-  copyright: "Copyright © 2018 DesignRevision",
+  copyright: "Copyright © 2019 Gishniz",
   menuItems: [
     {
       title: "Home",
-      to: "#"
+      to: "/"
     },
     {
-      title: "Services",
-      to: "#"
+      title: "Recipes",
+      to: "/recipes"
     },
-    {
-      title: "About",
-      to: "#"
-    },
-    {
-      title: "Products",
-      to: "#"
-    },
-    {
-      title: "Blog",
-      to: "#"
-    }
   ]
 };
 
