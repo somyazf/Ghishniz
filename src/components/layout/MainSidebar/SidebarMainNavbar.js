@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Navbar, NavbarBrand } from "shards-react";
 import {Link} from 'react-router-dom'
-import { Dispatcher, Constants } from "../../../flux";
+import { Dispatcher, Constants } from "flux";
 
 class SidebarMainNavbar extends React.Component {
   constructor(props) {
@@ -27,28 +27,25 @@ class SidebarMainNavbar extends React.Component {
         >
           <NavbarBrand
             className="w-100 mr-0"
-            href="#"
             style={{ lineHeight: "25px" }}
+            href="/"
           >
             <div className="d-flex m-auto align-items-center">
-              <Link to='/'>
-              <img
-                id="main-logo"
-                className="d-inline-block align-top mr-1"
-                style={{ maxWidth: "60px" }}
-                src={require("assets/images/site/newlogo-gishniz.png")}
-                alt="Gishniz"
-              />
-              </Link>
+                <img
+                  id="main-logo"
+                  className="d-inline-block align-top mr-1"
+                  style={{ maxWidth: "60px" }}
+                  src={require("assets/images/site/newlogo-gishniz.png")}
+                  alt="Gishniz"
+                />
               {!hideLogoText && (
-                <span className="d-flex d-md-inline ml-1 align-items-center" style={{fontSize:'20px',fontWeight:"bold"
+                <span className="d-flex d-md-inline ml-1 align-items-center" style={{fontSize:'20px',fontWeight:"500",color: "#525252"
               }}>
                   Gishniz
                 </span>
               )}
             </div>
           </NavbarBrand>
-          {/* eslint-disable-next-line */}
           <a
             className="toggle-sidebar d-sm-inline d-md-none d-lg-none"
             onClick={this.handleToggleSidebar}
