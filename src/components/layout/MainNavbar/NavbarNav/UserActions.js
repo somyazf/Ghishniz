@@ -14,13 +14,6 @@ import {
 } from "shards-react";
 
 
-
-const cookie = new Cookies();
-
-const userDetails = {
-  name: cookie.get('username'),
-}
-
 const UserActions=(props)=> {
 
  const [visible, setVisible] = useState(false);
@@ -31,9 +24,13 @@ const UserActions=(props)=> {
     setVisible(!visible);
   }
 
-  const lougout=()=> {
-    dispatch(authenticationAction.logout(props.history));
-  }
+  const cookie = new Cookies();
+  const [userDetail, setUserDetail] = useState({
+    name: cookie.get('name'),
+  })
+  // const lougout=()=> {
+  //   dispatch(authenticationAction.logout(props.history));
+  // }
 
     return (
       <NavItem tag={Dropdown} caret toggle={toggleUserActions}>
@@ -43,7 +40,7 @@ const UserActions=(props)=> {
             src={require("assets/images/avatars/0.jpg")}
             alt="User Avatar"
           />{" "}
-          <span className="d-none d-md-inline-block">{userDetails.name}</span>
+          <span className="d-none d-md-inline-block">{userDetail.name}</span>
         </DropdownToggle>
         <Collapse tag={DropdownMenu} right small open={visible}>
           <DropdownItem tag={Link} to="user-profile-lite">
@@ -53,7 +50,7 @@ const UserActions=(props)=> {
             <i className="material-icons">&#xE8B8;</i> Edit Profile
           </DropdownItem>
           <DropdownItem divider />
-          <DropdownItem tag={Link}  onClick={lougout} className="text-danger">
+          <DropdownItem tag={Link}  to="lougout" className="text-danger">
             <i className="material-icons text-danger">&#xE879;</i> Logout
           </DropdownItem>
         </Collapse>
