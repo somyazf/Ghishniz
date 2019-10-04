@@ -20,38 +20,35 @@ const Editor = ({
   valuesDirection,
   valuesReadyInMinutes,
   valuesServings,
-  imagePreviewUrl,
+  valuesIngredients,
   handleChange,
-  handleImageChange
+  inputs,
+  addInput,
+  handleInputChange,
+  handleRemove
 }) => {
 
-  const blankIngredinet = {ingredient:''};
-  const [inputs, setInputs] = useState([
-      {...blankIngredinet}
-  ]);
+  // const blankIngredinet = {ingredient:''};
+  // const [inputs, setInputs] = useState([
+  //     {...blankIngredinet}
+  // ]);
 
-  const addInput = () =>{
-      setInputs([...inputs, {...blankIngredinet}]);
-  }
+  // const addInput = () =>{
+  //     setInputs([...inputs, {...blankIngredinet}]);
+  // }
 
-  const inputHandleChange = (event) => {
-      const updatedInputs = [...inputs];
-      updatedInputs[event.target.name] = event.target.value;
-      setInputs(updatedInputs); 
-  }
+  // const inputHandleChange = (event) => {
+  //     const updatedInputs = [...inputs];
+  //     updatedInputs[event.target.name] = event.target.value;
+  //     setInputs(updatedInputs); 
+  // }
 
-  const handleRemove = (id) =>{
-      const items = [...inputs]
-      items.splice(id, 1);
-      setInputs(items);
-  }  
+   
 
-  let imagePreview = null;
-  if (imagePreviewUrl) {
-    imagePreview = (<img src={imagePreviewUrl} />);
-  } else {
-    imagePreview = (<div className="previewText">Please select an Image for Preview</div>);
-  }
+  // let imagePreview = null;
+  // if (imagePreviewUrl) {
+  //   imagePreview = (<img src={imagePreviewUrl} />);
+  // }
 
   return <>
     <Card small className="mb-3">
@@ -66,14 +63,15 @@ const Editor = ({
               <MultipleInput
                 inputs={inputs}
                 addInput={addInput}
-                handleChange={inputHandleChange}
+                handleChange={handleInputChange}
                 handleRemove={handleRemove}
+                valuesIngredients = {valuesIngredients}
               />
             </Col>
           </Row>
           <Row>
             <Col>
-              <h5>Additional Information:</h5>
+              <h5 className="additional">Additional Information:</h5>
             </Col>
           </Row>
           <Row>
@@ -101,10 +99,14 @@ const Editor = ({
             </Col>
           </Row>
           <Row>
-            <FormInput name="readyInMinutes" type="file" name="image" onChange={handleImageChange}/>
-            <div className="imgPreview">
-              {imagePreview}
-            </div>
+            <Col>
+              {/* <h5 className="additional">Upload an Image</h5> */}
+              {/* <input type="file" id="file" name="image" onChange={handleImageChange}/>
+              <label for="file" class="btn-2">upload</label>
+              <div className="imgPreview">
+                {imagePreview}
+              </div> */}
+            </Col>
           </Row>
         </Form>
       </CardBody>
