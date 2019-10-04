@@ -1,7 +1,7 @@
 export default function() {
   return [
     {
-      title: "Blog Dashboard",
+      title: "Dashboard",
       to: "/blog-overview",
       htmlBefore: '<i class="material-icons">dashboard</i>',
       htmlAfter: ""
@@ -12,7 +12,7 @@ export default function() {
       to: "/blog-posts",
     },
     {
-      title: "Add New Post",
+      title: "Add New Recipe",
       htmlBefore: '<i class="material-icons">note_add</i>',
       to: "/add-new-post",
     },
