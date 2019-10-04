@@ -7,6 +7,8 @@ import SidebarCategories from "../components/add-new-post/SidebarCategories";
 import { withRouter } from "react-router-dom";
 import { AUTHHOST } from '_constants/other.constants';
 import Axios from 'axios';
+import { connect } from "react-redux";
+import { uploadFileAction } from "_actions";
 
 const AddNewPost = (props) =>{ 
 
@@ -15,25 +17,51 @@ const AddNewPost = (props) =>{
     direction: '',
     readyInMinutes: '',
     servings: '',
+    ingredients: [],
     image: ''
   })
-
+  const { dispatch, error, loading, items } = props;
   const [image, setImage] = useState('');
   const [imagePreviewUrl, setImagePreviewUrl] = useState('');
+
+  const blankIngredinet = {ingredient:''};
+  const [inputs, setInputs] = useState([
+      {...blankIngredinet}
+  ]);
 
   const handleChange = ({target:{name,value}}) => {
     setValues({ ...values, [name]: value });
   };
+  
+  const addInput = () =>{
+    setInputs([...inputs, {...blankIngredinet}]);
+  }
 
-  const handleImageChange = (e) => {
+  const handleInputChange = (event) => {
+      const updatedInputs = [...inputs];
+      updatedInputs[event.target.name] = event.target.value;
+      setInputs(updatedInputs); 
+      setValues({ ...values, [event.target.name]: event.target.value });
+  }
+
+  const handleRemove = (id) =>{
+    const items = [...inputs]
+    items.splice(id, 1);
+    setInputs(items);
+  } 
+
+  const handleImageChange = (event) => {
     let reader = new FileReader();
-    let file = e.target.files[0];
+    let file = event.target.files[0];
     reader.onloadend = () => {
       setImage(file);
       setImagePreviewUrl(reader.result);
     }
     reader.readAsDataURL(file);
-    setValues({ ...values, [e.target.name]: e.target.value });
+  }
+  
+  const uploadImage = (event) => {
+    
   }
 
   const addPost = async() => {
@@ -71,9 +99,12 @@ const AddNewPost = (props) =>{
             valuesDirection = {values.direction}
             valuesReadyInMinutes = {values.readyInMinutes}
             valuesServings = {values.servings}
-            imagePreviewUrl = {imagePreviewUrl}
+            valuesIngredients = {values.ingredients}
             handleChange = {handleChange}
-            handleImageChange = {handleImageChange}
+            inputs={inputs}
+            addInput={addInput}
+            handleInputChange={handleInputChange}
+            handleRemove={handleRemove}
           />
         </Col>
 
@@ -82,11 +113,23 @@ const AddNewPost = (props) =>{
           <SidebarActions
             addPost = {addPost}
           />
-          <SidebarCategories />
+          <SidebarCategories 
+            imagePreviewUrl = {imagePreviewUrl}
+            handleImageChange = {handleImageChange}
+          />
         </Col>
       </Row>
     </Container>
   </>
 }
-withRouter(AddNewPost);
-export {AddNewPost};
+
+const mapStateToProps = state => {
+  const { loading } = state.getDataReducer;
+  const { items } = state.getDataReducer;
+  const { error } = state.getDataReducer;
+
+  return { loading, items, error };
+};
+
+const ConnectedRecipesPage = withRouter(connect(mapStateToProps)(AddNewPost));
+export { ConnectedRecipesPage as AddNewPost };
