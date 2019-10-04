@@ -11,7 +11,8 @@ const MultipleInput = ({
     inputs,
     addInput,
     handleChange,
-    handleRemove
+    handleRemove,
+    valuesIngredients
 }) => {
 
 // const blankIngredinet = {ingredient:''};
@@ -44,7 +45,7 @@ const MultipleInput = ({
                         <InputGroupAddon type="prepend">
                             <InputGroupText>{`Ingredient ${index + 1}:`}</InputGroupText>
                         </InputGroupAddon>
-                        <FormInput value={inputs[index].ingId} name={ingId} onChange={handleChange}/>
+                        <FormInput value={inputs[index].ingId} name="ingredients" onChange={handleChange}/>
                         <InputGroupAddon type="append">
                             <Button theme="secondary" onClick={handleRemove}>X</Button>
                         </InputGroupAddon>
